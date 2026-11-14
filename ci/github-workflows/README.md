@@ -1,12 +1,12 @@
-# GitHub Actions workflows
+# Workflows waiting to be installed
 
-These belong in `.github/workflows/`. They live here because the automated
-session that created them wasn't allowed to write workflow files.
+Automated sessions can't push to `.github/workflows/`, so new or changed
+workflows are parked here for a person to move into place.
 
-To install them, either:
+- `check.yml`: validates data, runs tests and builds the site on every pull request
+  (including the Thursday plan PRs). Not installed yet.
 
-- **On GitHub:** open each file here, copy it, then *Add file → Create new file*
-  and name it `.github/workflows/deploy.yml` (and `check.yml`). Commit to `main`.
-- **Locally:** `mkdir -p .github/workflows && git mv ci/github-workflows/*.yml .github/workflows/`, then commit and push.
+To install one on GitHub: open the file, copy it, then *Add file → Create new file*,
+name it `.github/workflows/<name>.yml` and commit to `main`. Then delete the copy here.
 
-Also set **Settings → Pages → Source: GitHub Actions**.
+Already installed: `.github/workflows/deploy.yml` (deploys the site on every push to `main`).

@@ -54,6 +54,6 @@ npm run serve
 
 ## Deploying
 
-Pushing to `main` builds and deploys to GitHub Pages (`.github/workflows/deploy.yml`; until it is installed, the files wait in `ci/github-workflows/`, see the README there).
-Pull requests run the checks and a test build (`.github/workflows/check.yml`).
+Pushing to `main` builds and deploys to GitHub Pages (`.github/workflows/deploy.yml`).
+Pull requests run the checks and a test build once `check.yml` is installed (it waits in `ci/github-workflows/`).
 In the repo settings, Pages → Source must be **GitHub Actions**.
