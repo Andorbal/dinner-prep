@@ -1,0 +1,24 @@
+name: Beef and Broccoli
+summary: A quick takeout-style stir-fry of marinated flank steak and broccoli over rice.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Chinese-American
+tags: [beef, rice, stir-fry]
+night_of_minutes: 15
+uses:
+  - { component: marinated-beef, qty: 1.5, unit: lb }
+  - { component: cooked-rice, qty: 5, unit: cup }
+ingredients:
+  - { item: broccoli, qty: 1, prep: cut into small florets }
+  - { item: olive-oil, qty: 1, unit: tbsp }
+sides:
+  - { kind: fruit, item: clementines, qty: 4 }
+steps:
+  - text: Make sure the beef thawed in the fridge overnight.
+    only: prepped
+  - Heat the oil in a large skillet over high heat. Stir-fry the beef in two batches, 2 to 3 minutes each, then set aside.
+  - Add the broccoli and 1/4 cup water, cover and steam 3 minutes. Return the beef and any marinade and toss until glossy.
+  - text: Reheat the rice, covered, in the microwave.
+    only: prepped
+  - Serve over rice with clementines.

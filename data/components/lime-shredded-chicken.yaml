@@ -1,0 +1,33 @@
+name: Lime shredded chicken
+summary: Mildly spiced pressure-cooker chicken thighs, shredded into their own juices. The base for bowls, quesadillas, nachos and burritos.
+yield: { qty: 6, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Vacuum-seal flat in 3-cup bags with some of the juices.
+  thaw: Overnight in the fridge, or in a bowl of cold water for an hour.
+ingredients:
+  - { item: chicken-thighs, qty: 3, unit: lb }
+  - { item: chicken-broth, qty: 1, unit: cup }
+  - { item: limes, qty: 1, prep: juiced }
+  - { item: cumin, qty: 1, unit: tsp }
+  - { item: chili-powder, qty: 1, unit: tsp }
+  - { item: smoked-paprika, qty: 0.5, unit: tsp }
+  - { item: onion-powder, qty: 0.5, unit: tsp }
+  - { item: garlic, qty: 2, unit: clove, prep: minced }
+  - { item: salt, qty: 0.75, unit: tsp }
+steps:
+  - text: Put the chicken in the Instant Pot with the broth, lime juice, spices, garlic and salt.
+    minutes: 5
+    active: true
+    gear: [instant-pot]
+  - text: Pressure cook on high for 12 minutes, then let the pressure release naturally for 10 minutes. (Crock pot instead? High for 3 to 4 hours.)
+    minutes: 32
+    active: false
+    gear: [instant-pot]
+  - text: Shred the chicken with two forks and stir it back into the juices.
+    minutes: 8
+    active: true
+  - text: Portion into 3-cup containers for the fridge, or vacuum-seal flat for the freezer.
+    minutes: 5
+    active: true

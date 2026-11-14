@@ -1,0 +1,22 @@
+name: Sheet-Pan Chicken Sausage and Potatoes
+summary: Smoked chicken sausage, crispy baby potatoes and green beans on one pan. No prep-day work at all.
+serves: 4
+spice: 0
+handheld: false
+cuisine: American
+tags: [no-prep, sheet-pan, chicken]
+night_of_minutes: 35
+ingredients:
+  - { item: chicken-sausage, qty: 24, unit: oz, prep: sliced into coins }
+  - { item: baby-potatoes, qty: 1.5, unit: lb, prep: halved }
+  - { item: green-beans, qty: 1, unit: lb, prep: trimmed }
+  - { item: olive-oil, qty: 2, unit: tbsp }
+  - { item: garlic-powder, qty: 1, unit: tsp }
+  - { item: smoked-paprika, qty: 1, unit: tsp }
+  - { item: salt, qty: 0.75, unit: tsp }
+sides:
+  - { kind: fruit, item: grapes, qty: 1, unit: lb }
+steps:
+  - Heat the oven to 425°F.
+  - Toss the potatoes with half the oil and seasonings. Roast for 15 minutes.
+  - Add the sausage and green beans tossed with the rest of the oil and seasonings. Roast 12 to 15 minutes more, until the potatoes are crisp.

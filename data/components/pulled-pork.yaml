@@ -1,0 +1,30 @@
+name: Pulled pork
+summary: Dry-rubbed pork shoulder, pressure-cooked until it falls apart. Sauce goes on at the table.
+yield: { qty: 8, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Vacuum-seal flat in 4-cup bags with a little of the juice.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: pork-shoulder, qty: 3, unit: lb, prep: cut into 4 chunks }
+  - { item: brown-sugar, qty: 2, unit: tbsp }
+  - { item: smoked-paprika, qty: 1, unit: tbsp }
+  - { item: garlic-powder, qty: 2, unit: tsp }
+  - { item: onion-powder, qty: 1, unit: tsp }
+  - { item: cumin, qty: 1, unit: tsp }
+  - { item: salt, qty: 2, unit: tsp }
+  - { item: chicken-broth, qty: 1, unit: cup }
+  - { item: apple-cider-vinegar, qty: 2, unit: tbsp }
+steps:
+  - text: Rub the pork all over with the sugar and spices. Put it in the Instant Pot with the broth and vinegar.
+    minutes: 6
+    active: true
+    gear: [instant-pot]
+  - text: Pressure cook on high for 60 minutes, then natural release for 15. (Crock pot instead? Low for 8 hours.)
+    minutes: 85
+    active: false
+    gear: [instant-pot]
+  - text: Shred with two forks, discarding any fat, and moisten with some of the cooking liquid.
+    minutes: 8
+    active: true

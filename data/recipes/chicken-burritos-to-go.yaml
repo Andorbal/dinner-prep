@@ -1,0 +1,19 @@
+name: Chicken Burritos To Go
+summary: The burritos rolled on prep day, crisped in the air fryer and wrapped for the car.
+serves: 4
+spice: 1
+handheld: true
+cuisine: Tex-Mex
+tags: [on-the-go, chicken, freezer-friendly]
+night_of_minutes: 10
+uses:
+  - { component: chicken-burritos, qty: 4 }
+sides:
+  - { kind: veg, item: snap-peas, qty: 1, unit: lb }
+  - { kind: fruit, item: clementines, qty: 4 }
+steps:
+  - text: "From the fridge: air-fry at 375°F for 6 to 8 minutes, turning once. From frozen: microwave 2 minutes, then air-fry 4."
+    only: prepped
+  - text: Air-fry the burritos at 375°F for 4 minutes, turning once, until crisp.
+    only: scratch
+  - Wrap in foil and pack in an insulated bag. Peel clementines on the way.

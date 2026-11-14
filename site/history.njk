@@ -1,0 +1,35 @@
+---
+title: History
+section: /history/
+---
+{% extends "base.njk" %}
+{% from "macros.njk" import fb %}
+{% block content %}
+<div class="week-head"><h1>What we've eaten</h1><span class="badge b">A · B · C · D</span>
+<p class="sub">Feedback lives in each week's plan file: add <code>feedback: {{ '{' }} A: love, B: like, C: meh, D: nope, note: "..." {{ '}' }}</code> under a dinner.</p></div>
+
+<h2 class="section">Family scoreboard</h2>
+<div class="scroll-x"><table class="tbl">
+  <thead><tr><th>Recipe</th><th>Made</th>{% for m in model.household.members %}<th>{{ m }}</th>{% endfor %}<th>Score</th></tr></thead>
+  <tbody>
+  {% for r in model.recipes %}{% if r.history.timesServed %}
+    <tr><td><a href="/recipes/{{ r.id }}/">{{ r.name }}</a></td><td class="mono">{{ r.history.timesServed }}×</td>
+    {% for m in r.history.byMember %}<td>{{ fb(m.last) }}</td>{% endfor %}
+    <td class="mono">{% if r.history.score != null %}{{ r.history.score | round(1) }}{% else %}—{% endif %}</td></tr>
+  {% endif %}{% endfor %}
+  </tbody>
+</table></div>
+<p class="muted" style="font-size:14px">Each column shows that person's most recent rating. Score averages everyone: love 2, like 1, meh 0, nope −2.</p>
+
+<h2 class="section" style="margin-top:36px">Week by week</h2>
+{% for p in model.plans | reverse %}
+<section class="panel" style="margin-bottom:14px">
+  <h3><a href="/weeks/{{ p.week_of }}/">Week of {{ p.pretty }}</a> <small>Week {{ p.cycle }}</small></h3>
+  <div class="scroll-x"><table class="tbl">
+    <thead><tr><th>Night</th><th>Dinner</th>{% for m in model.household.members %}<th>{{ m }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for d in p.dinners %}<tr><td class="mono">{{ d.day | upper }}</td><td><a href="/recipes/{{ d.recipe.id }}/">{{ d.swappedFor.name if d.swappedFor else d.recipe.name }}</a>{% if d.skipped %} <span class="muted">(skipped)</span>{% endif %}{% if d.feedbackNote %}<br><span class="muted" style="font-size:13.5px">“{{ d.feedbackNote }}”</span>{% endif %}</td>
+    {% if d.feedback %}{% for f in d.feedback %}<td>{{ fb(f.value) }}</td>{% endfor %}{% else %}{% for m in model.household.members %}<td>{{ fb(null) }}</td>{% endfor %}{% endif %}</tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+name: Egg bites
+summary: Muffin-tin eggs with cheese, half plain and half with spinach.
+yield: { qty: 12, unit: each, one: egg bite, other: egg bites }
+storage:
+  fridge_days: 4
+  freezer_months: 2
+  freeze: Freeze on a tray, then vacuum-seal.
+  thaw: Air-fry from frozen at 340°F for 8 minutes.
+ingredients:
+  - { item: eggs, qty: 12 }
+  - { item: milk, qty: 0.5, unit: cup }
+  - { item: mexican-cheese, qty: 1, unit: cup }
+  - { item: baby-spinach, qty: 1, unit: cup, prep: chopped }
+  - { item: salt, qty: 0.5, unit: tsp }
+steps:
+  - text: Heat the oven to 350°F and grease a 12-cup muffin tin.
+    minutes: 10
+    active: false
+    gear: [oven]
+  - text: Whisk the eggs, milk, cheese and salt. Fill the cups, then stir chopped spinach into half of them.
+    minutes: 6
+    active: true
+  - text: Bake for 20 to 22 minutes, until just set in the middle.
+    minutes: 22
+    active: false
+    gear: [oven]
+  - text: Cool in the tin for 10 minutes before popping them out.
+    minutes: 10
+    active: false

@@ -1,0 +1,66 @@
+# Household settings. No names or personal details: the family is A, B, C and D.
+# Everything here is about how we cook and eat, not who we are.
+
+servings: 4
+
+# Family members, used for recipe feedback in plan files.
+members: [A, B, C, D]
+
+# Feedback words you can use in a plan file, and how the generator scores them.
+feedback_scale:
+  love: 2
+  like: 1
+  meh: 0
+  nope: -2
+
+# Weeknights we plan for. Weekends are on their own.
+dinner_days: [mon, tue, wed, thu, fri]
+
+# Nights we get home after 7pm: dinner must be hand-held and eaten in the car.
+late_nights: [wed, thu]
+
+# Prep happens the day before the week starts (Sunday for a Monday week).
+prep_day: sun
+
+# Two-week cycle. Week A = big prep with double batches frozen.
+# Week B = light prep that runs on the frozen stock.
+cycle:
+  A: { prep_minutes: 120, label: Big prep week }
+  B: { prep_minutes: 45, label: Light prep week }
+  # How many freezable components get an extra batch for the freezer in Week A.
+  double_batch_max: 2
+
+# How far back the generator looks when balancing repeats against new meals.
+history_weeks: 16
+# A recipe served within this many weeks is avoided.
+min_weeks_between_repeats: 3
+# Roughly how many of the five dinners should be new-to-us or rarely served.
+new_recipes_per_week: 1
+
+gear:
+  - instant-pot
+  - crock-pot
+  - air-fryer
+  - vacuum-sealer
+  - stove
+  - oven
+  - microwave
+  - stand-mixer
+  - blender
+  - stick-blender
+  - food-processor
+  - rice-cooker
+
+# How many things each piece of gear can do at once (used to draft prep timelines).
+gear_capacity:
+  oven: 2
+  stove: 3
+  instant-pot: 1
+  crock-pot: 1
+  air-fryer: 1
+  microwave: 1
+  rice-cooker: 1
+
+# Added to every week's grocery list.
+weekly_extras:
+  - { item: milk, qty: 1, unit: gallon }

@@ -1,0 +1,14 @@
+name: Lime crema
+summary: Greek yogurt with lime and garlic. Takes the place of salsa and sour cream.
+yield: { qty: 1, unit: cup }
+storage:
+  fridge_days: 5
+ingredients:
+  - { item: greek-yogurt, qty: 1, unit: cup }
+  - { item: limes, qty: 1, prep: juiced }
+  - { item: garlic-powder, qty: 0.125, unit: tsp }
+  - { item: salt, qty: 0.125, unit: tsp }
+steps:
+  - text: Stir everything together in a jar and refrigerate.
+    minutes: 3
+    active: true

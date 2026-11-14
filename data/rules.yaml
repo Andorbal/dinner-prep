@@ -1,0 +1,31 @@
+# Machine-checkable version of preferences.md. `npm run check` enforces these
+# against every ingredient used by every recipe and component.
+
+# 0 = no heat, 1 = a little warmth (chili powder, mild salsa), 2 = noticeable, 3 = hot.
+max_spice: 1
+
+# Never allowed, matched against ingredient ids and names (case-insensitive regex).
+banned:
+  - pattern: "bell pepper|sweet pepper|mini pepper"
+    reason: No bell peppers.
+  - pattern: "cucumber|tzatziki"
+    reason: No cucumbers (tzatziki usually has cucumber; use garlic yogurt sauce).
+  - pattern: "\\bolives?\\b(?![- ]oil)"
+    reason: No olives (olive oil is fine).
+  - pattern: "diced tomato|crushed tomato|chunky|pico de gallo|tomato chunk|cherry tomato|grape tomato|fresh tomato|salsa"
+    reason: No tomato chunks. Smooth sauces are fine.
+  - pattern: "jalape|habanero|serrano|ghost pepper|cayenne|sriracha|chipotle|red pepper flake"
+    reason: Nothing very spicy.
+
+# Allowed only in certain forms.
+restricted:
+  - pattern: "\\bonions?\\b|shallot|scallion|green onion|leek"
+    allow_ids: [onion-powder]
+    allow_prep: ["grated", "removed before serving", "blended smooth"]
+    reason: No visible onion. Onion powder, grated onion, or onion pulled out before serving is fine.
+  - pattern: "tomato"
+    allow_tags: [smooth]
+    reason: Tomato only as a smooth sauce or paste.
+
+# Ingredients tagged with these must always list an alternative (`alt`) wherever used.
+needs_alternative_tags: [melon, avocado]

@@ -1,0 +1,36 @@
+{% macro car() %}<span class="car"><svg viewBox="0 0 16 10" aria-hidden="true"><path d="M2 6 L3.5 2.5 Q4 1.5 5 1.5 H11 Q12 1.5 12.5 2.5 L14 6 V8.5 H2 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="8.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="8.5" r="1.4" fill="currentColor"/></svg>In the car</span>{% endmacro %}
+
+{% macro cycleBadge(p) %}<span class="badge{% if p.cycle == 'B' %} b{% endif %}">WEEK {{ p.cycle }} · {{ p.label | upper }}</span>{% endmacro %}
+
+{% macro fb(value) %}{% if value %}<span class="fb fb-{{ value }}">{{ value }}</span>{% else %}<span class="fb fb-none">·</span>{% endif %}{% endmacro %}
+
+{% macro dayCard(d) %}
+<li class="d{% if d.skipped %} past{% endif %}" data-date="{{ d.date }}">
+  <span class="dn" aria-hidden="true">{{ d.day }}</span>
+  <span class="date">{{ d.dayName }} · {{ d.pretty }}</span>
+  <a class="dish" href="/recipes/{{ d.recipe.id }}/prepped/">{{ d.recipe.name }}</a>
+  <span class="meta">{% if d.late %}{{ car() }}{% endif %}<span>{{ d.recipe.night }} min</span></span>
+  {% if d.swappedFor %}<span class="swap">Had {{ d.swappedFor.name }} instead</span>{% endif %}
+  {% if d.skipped %}<span class="swap">Skipped</span>{% endif %}
+  {% if d.note %}<span class="swap">{{ d.note }}</span>{% endif %}
+  <span class="sides">{{ d.sidesShort | join(" · ") }}</span>
+</li>
+{% endmacro %}
+
+{% macro prepPanel(p) %}
+<section class="panel hatch" data-prep-date="{{ p.prepDate }}" aria-labelledby="prep-{{ p.week_of }}">
+  <h3 id="prep-{{ p.week_of }}">{{ p.prepPretty }} prep <small>~{{ p.prep.estimate | mins }} · target {{ p.prep.budget | mins }}</small></h3>
+  <ul class="batches" aria-label="What gets made">
+    {% for b in p.prep.batches %}<li><a href="/prep/{{ b.id }}/" title="{{ b.note or '' }}">{{ b.makes }}</a></li>{% endfor %}
+  </ul>
+  <ol class="timeline">
+    {% for t in p.prep.timeline %}<li><span class="at">{{ t.at }}</span><span>{% if t.title %}<b>{{ t.title }}.</b> {% endif %}{{ t.text }}</span></li>{% endfor %}
+  </ol>
+</section>
+{% endmacro %}
+
+{% macro thawCallouts(p) %}
+{% for t in p.ledger.thaw %}
+<p class="callout" data-thaw-date="{{ t.date }}" hidden><span class="kicker">Tonight</span><span>Move <b>{{ t.text }}</b> from the freezer to the fridge.</span></p>
+{% endfor %}
+{% endmacro %}

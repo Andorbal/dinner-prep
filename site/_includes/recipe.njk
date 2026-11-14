@@ -1,0 +1,65 @@
+{% extends "base.njk" %}
+{% from "macros.njk" import car, fb %}
+{% block head %}
+<link rel="canonical" href="{{ view.url }}">
+<script type="application/ld+json">{{ view.jsonld | json | safe }}</script>
+{% endblock %}
+{% block content %}
+<article class="rc">
+  <header class="rc-head{% if view.kind == 'prepped' %} prepped{% endif %}">
+    <p class="kicker">{% if view.kind == 'prepped' %}Prep day done · tonight only{% else %}From scratch · start to finish{% endif %}</p>
+    <h1>{{ r.name }}</h1>
+    <p>{{ r.summary }}</p>
+    {% if r.hasComponents %}
+    <nav class="toggle" aria-label="Recipe version">
+      <a href="/recipes/{{ r.id }}/"{% if view.kind == 'scratch' %} aria-current="page"{% endif %}>From scratch</a>
+      <a href="/recipes/{{ r.id }}/prepped/"{% if view.kind == 'prepped' %} aria-current="page"{% endif %}>Prepped</a>
+    </nav>
+    {% endif %}
+  </header>
+  <div class="facts">
+    <span>Serves <b>{{ r.prepped.jsonld.recipeYield | replace(" servings", "") }}</b></span>
+    <span><b>{{ view.time.total | mins }}</b> {% if view.kind == 'prepped' %}tonight{% else %}total{% endif %}{% if view.kind == 'scratch' and view.time.active < view.time.total %} ({{ view.time.active | mins }} hands-on){% endif %}</span>
+    <span>{{ r.spice | spiceWord }}</span>
+    {% if r.cuisine %}<span>{{ r.cuisine }}</span>{% endif %}
+    {% if r.handheld %}{{ car() }}{% endif %}
+  </div>
+  <div class="rc-body">
+    <section aria-label="Ingredients">
+      {% for g in view.groups %}
+        <h2>{% if g.component %}<a href="/prep/{{ g.component }}/">{{ g.title }}</a>{% else %}{{ g.title }}{% endif %}</h2>
+        {% if g.makes %}<p class="makes">Makes {{ g.makes }}</p>{% endif %}
+        <ul class="ing">
+          {% for t in g.text %}
+            {% set line = g.lines[loop.index0] %}
+            <li>{% if line.component %}<a href="/prep/{{ line.component }}/">{{ t | replace(" (prepped)", "") }}</a> <span class="prepped">prepped</span>{% else %}{{ t }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </section>
+    <section aria-label="Steps">
+      {% for s in view.sections %}{% if s.steps.length %}
+        <h2>{% if s.component %}<a href="/prep/{{ s.component }}/">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}</h2>
+        <ol class="steps">{% for t in s.steps %}<li><span>{{ t }}</span></li>{% endfor %}</ol>
+      {% endif %}{% endfor %}
+      {% if r.notes.length %}<h2>Notes</h2><ul class="notes">{% for n in r.notes %}<li>{{ n }}</li>{% endfor %}</ul>{% endif %}
+    </section>
+  </div>
+  <div class="import">
+    <span><b>Save to AnyList:</b> copy this page's link, then in AnyList choose Recipes → + → Import from web. This version imports as “{{ view.name }}”.</span>
+    <button class="btn" type="button" data-copy="{{ view.url }}">Copy link</button>
+  </div>
+</article>
+
+<section style="margin-top:36px" aria-labelledby="hist">
+  <h2 class="section" id="hist">On our table</h2>
+  {% if r.history.servings.length %}
+  <div class="scroll-x"><table class="tbl">
+    <thead><tr><th>When</th>{% for m in model.household.members %}<th>{{ m }}</th>{% endfor %}<th>Note</th></tr></thead>
+    <tbody>{% for s in r.history.servings | reverse %}<tr><td class="mono"><a href="/weeks/{{ s.week_of }}/">{{ s.pretty }}</a></td>{% for m in s.members %}<td>{{ fb(m.value) }}</td>{% endfor %}<td>{{ s.note or '' }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+  {% else %}<p class="muted">Not made yet{% if r.history.planned.length %}. Planned for <a href="/weeks/{{ r.history.planned[0].week_of }}/">{{ r.history.planned[0].pretty }}</a>{% endif %}.</p>{% endif %}
+  {% if r.history.servings.length and r.history.planned.length %}<p class="muted">Next planned: <a href="/weeks/{{ r.history.planned[0].week_of }}/">{{ r.history.planned[0].pretty }}</a>.</p>{% endif %}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/copy.js" defer></script>{% endblock %}

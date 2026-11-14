@@ -1,0 +1,27 @@
+name: Lemon-oregano chicken
+summary: Air-fried chicken thighs with lemon, garlic and oregano, sliced for pitas.
+yield: { qty: 6, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Vacuum-seal sliced chicken flat.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: chicken-thighs, qty: 3, unit: lb }
+  - { item: lemons, qty: 1, prep: zested and juiced }
+  - { item: olive-oil, qty: 2, unit: tbsp }
+  - { item: dried-oregano, qty: 2, unit: tsp }
+  - { item: garlic, qty: 3, unit: clove, prep: grated }
+  - { item: salt, qty: 1, unit: tsp }
+  - { item: black-pepper, qty: 0.5, unit: tsp }
+steps:
+  - text: Toss the chicken with the lemon, oil, oregano, garlic, salt and pepper. Let it sit 15 minutes (or overnight).
+    minutes: 20
+    active: false
+  - text: Air-fry at 380°F for 16 to 18 minutes in batches, flipping halfway, until 175°F inside.
+    minutes: 36
+    active: false
+    gear: [air-fryer]
+  - text: Rest 5 minutes, then slice thinly.
+    minutes: 8
+    active: true

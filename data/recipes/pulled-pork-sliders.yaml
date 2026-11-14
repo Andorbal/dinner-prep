@@ -1,0 +1,20 @@
+name: Pulled Pork Sliders
+summary: Tender pulled pork on slider buns with mild barbecue sauce. Easy to eat with one hand.
+serves: 4
+spice: 0
+handheld: true
+cuisine: American
+tags: [pork, sandwiches, on-the-go, freezer-friendly]
+night_of_minutes: 10
+uses:
+  - { component: pulled-pork, qty: 4, unit: cup }
+ingredients:
+  - { item: slider-buns, qty: 12 }
+  - { item: bbq-sauce, qty: 0.5, unit: cup }
+sides:
+  - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+steps:
+  - Warm the pork, covered, in the microwave for 3 minutes, or in the crock pot on Warm.
+  - Toast the buns in the air fryer at 350°F for 2 minutes.
+  - Pile pork on the buns and add barbecue sauce to taste. For the car, wrap in pairs in foil.

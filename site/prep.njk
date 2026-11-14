@@ -1,0 +1,22 @@
+---
+title: Prep
+section: /prep/
+---
+{% extends "base.njk" %}
+{% block content %}
+<div class="week-head"><h1>Prep-day components</h1><span class="badge b">MAKE AHEAD</span>
+<p class="sub">The building blocks cooked on prep day. Dinners use them; the freezer stores the extras.</p></div>
+<ul class="cards">
+{% for c in model.components %}
+  <li>
+    <a class="t" href="/prep/{{ c.id }}/">{{ c.name }}</a>
+    <p>{{ c.summary }}</p>
+    <div class="meta">
+      <span class="tag">makes {{ c.makes }}</span>
+      <span class="tag">{{ c.time.total | mins }}</span>
+      {% if c.storage.freezer_months %}<span class="tag">freezes</span>{% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

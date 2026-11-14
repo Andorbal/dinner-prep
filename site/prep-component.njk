@@ -1,0 +1,51 @@
+---
+pagination:
+  data: model.components
+  size: 1
+  alias: c
+permalink: "/prep/{{ c.id }}/"
+eleventyComputed:
+  title: "{{ c.name }}"
+  description: "{{ c.summary }}"
+section: /prep/
+---
+{% extends "base.njk" %}
+{% block head %}
+<link rel="canonical" href="{{ c.url }}">
+<script type="application/ld+json">{{ c.jsonld | json | safe }}</script>
+{% endblock %}
+{% block content %}
+<article class="rc">
+  <header class="rc-head prepped">
+    <p class="kicker">Prep-day component · makes {{ c.makes }}</p>
+    <h1>{{ c.name }}</h1>
+    <p>{{ c.summary }}</p>
+  </header>
+  <div class="facts">
+    <span><b>{{ c.time.total | mins }}</b> total ({{ c.time.active | mins }} hands-on)</span>
+    {% if c.storage.fridge_days %}<span>Fridge <b>{{ c.storage.fridge_days }} days</b></span>{% endif %}
+    {% if c.storage.freezer_months %}<span>Freezer <b>{{ c.storage.freezer_months }} months</b></span>{% else %}<span>Doesn't freeze</span>{% endif %}
+  </div>
+  <div class="rc-body">
+    <section aria-label="Ingredients">
+      {% if c.uses.length %}<h2>Made earlier</h2><ul class="ing">{% for u in c.uses %}<li><a href="/prep/{{ u.component }}/">{{ u.text | replace(" (prepped)", "") }}</a> <span class="prepped">prepped</span></li>{% endfor %}</ul>{% endif %}
+      <h2>Ingredients</h2>
+      <ul class="ing">{% for l in c.lines %}<li>{{ l }}</li>{% endfor %}</ul>
+      {% if c.storage.freeze or c.storage.thaw %}
+      <h2>Storing</h2>
+      <ul class="notes">{% if c.storage.freeze %}<li><b>Freeze:</b> {{ c.storage.freeze }}</li>{% endif %}{% if c.storage.thaw %}<li><b>Thaw:</b> {{ c.storage.thaw }}</li>{% endif %}</ul>
+      {% endif %}
+    </section>
+    <section aria-label="Steps">
+      <h2>Steps</h2>
+      <ol class="steps">{% for t in c.sections[0].steps %}<li><span>{{ t }}</span></li>{% endfor %}</ol>
+      {% if c.usedBy.length %}<h2>Goes into</h2><ul class="notes">{% for u in c.usedBy %}<li><a href="/recipes/{{ u.id }}/prepped/">{{ u.name }}</a></li>{% endfor %}</ul>{% endif %}
+    </section>
+  </div>
+  <div class="import">
+    <span><b>Save to AnyList:</b> copy the link, then Recipes → + → Import from web.</span>
+    <button class="btn" type="button" data-copy="{{ c.url }}">Copy link</button>
+  </div>
+</article>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/copy.js" defer></script>{% endblock %}

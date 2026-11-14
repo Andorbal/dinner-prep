@@ -1,0 +1,35 @@
+name: Chicken Burrito Bowls
+summary: Build-your-own bowls with lime shredded chicken, rice, beans and corn. Everything sits in its own bowl, so everyone builds what they like.
+serves: 4
+spice: 1
+handheld: false
+cuisine: Tex-Mex
+tags: [build-your-own, chicken, rice]
+night_of_minutes: 10
+uses:
+  - { component: lime-shredded-chicken, qty: 3, unit: cup }
+  - { component: cooked-rice, qty: 5, unit: cup }
+  - { component: lime-crema, qty: 1, unit: cup }
+ingredients:
+  - { item: black-beans, qty: 1, unit: can, prep: rinsed and drained }
+  - { item: frozen-corn, qty: 1.5, unit: cup }
+  - { item: mexican-cheese, qty: 1, unit: cup }
+  - item: avocado
+    qty: 2
+    prep: sliced or mashed with lime and salt
+    alt: { item: shredded-lettuce, qty: 3, unit: cup }
+  - { item: limes, qty: 1, prep: cut in wedges }
+sides:
+  - kind: fruit
+    item: cantaloupe
+    qty: 0.5
+    prep: cubed
+    alt: { item: pineapple, qty: 0.5, prep: cubed }
+steps:
+  - text: Reheat the chicken (with its juices) and the rice in the microwave, covered, 2 to 3 minutes each.
+    only: prepped
+  - Warm the beans and corn together in the microwave or a small pot.
+  - Slice the avocado, or mash it with lime and salt. Set out the shredded lettuce for anyone skipping avocado.
+  - Put everything in separate bowls on the counter with the cheese, crema and lime wedges. Everyone builds their own bowl, or wraps it in a tortilla.
+notes:
+  - The chicken has a little warmth from chili powder. Keep hot sauce on the table for anyone who wants more.

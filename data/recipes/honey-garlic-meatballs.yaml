@@ -1,0 +1,26 @@
+name: Honey-Garlic Turkey Meatballs
+summary: Turkey meatballs in a glossy honey-garlic sauce over rice, with air-fried broccoli.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Asian-inspired
+tags: [turkey, rice]
+night_of_minutes: 12
+uses:
+  - { component: turkey-meatballs, qty: 20 }
+  - { component: honey-garlic-sauce, qty: 1, unit: cup }
+  - { component: cooked-rice, qty: 5, unit: cup }
+ingredients:
+  - { item: broccoli, qty: 1, prep: cut into florets }
+  - { item: olive-oil, qty: 1, unit: tbsp }
+  - { item: salt, qty: 0.25, unit: tsp }
+sides:
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+steps:
+  - Warm the meatballs and sauce together in a covered skillet over medium-low for 8 to 10 minutes, stirring now and then.
+  - text: Reheat the rice in the microwave, covered, for 2 to 3 minutes.
+    only: prepped
+  - Toss the broccoli with the oil and salt and air-fry at 400°F for 8 minutes, shaking once.
+  - Serve the meatballs over rice with broccoli and apple slices on the side.
+notes:
+  - The sauce keeps for two weeks, so a double batch covers a second meatball or stir-fry night.

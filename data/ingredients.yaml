@@ -1,0 +1,110 @@
+# The ingredient catalog: every store-bought item a recipe or component can use.
+#
+#   name      what it's called in a recipe line (singular for counted items)
+#   plural    plural for counted items (defaults to name + "s")
+#   aisle     store section, used to order the grocery list
+#   buy       bulk  = shelf-stable or freezable, bought every two weeks
+#             fresh = produce, bakery, short-life dairy, bought weekly
+#   staple    true = usually on hand; grocery list puts it under "check the pantry"
+#   unit      the unit you shop in (omit for counted items)
+#   convert   how many shop units one recipe unit is, when they don't convert
+#             naturally (e.g. cheese bought by the oz, measured by the cup)
+#   package   how it's sold: grocery list rounds up to whole packages
+#   short     short name for compact side-dish lists (optional)
+#   tags      used by rules.yaml (smooth, melon, avocado…)
+
+# ── Produce ────────────────────────────────────────────────────────────────
+apples:          { name: apple, aisle: produce, buy: fresh }
+avocado:         { name: avocado, aisle: produce, buy: fresh, tags: [avocado] }
+baby-carrots:    { name: baby carrots, aisle: produce, buy: fresh, unit: lb }
+baby-potatoes:   { name: baby potatoes, aisle: produce, buy: fresh, unit: lb }
+baby-spinach:    { name: baby spinach, aisle: produce, buy: fresh, unit: oz, convert: { cup: 1 }, package: { size: 5, label: 5 oz box } }
+bananas:         { name: banana, aisle: produce, buy: fresh }
+broccoli:        { name: large broccoli crown, plural: large broccoli crowns, short: broccoli, aisle: produce, buy: fresh }
+cantaloupe:      { name: cantaloupe, aisle: produce, buy: fresh, tags: [melon] }
+clementines:     { name: clementine, aisle: produce, buy: fresh, package: { size: 15, label: 3 lb bag } }
+garlic:          { name: garlic, aisle: produce, buy: fresh, unit: head, convert: { clove: 0.1 } }
+ginger:          { name: fresh ginger, aisle: produce, buy: fresh, unit: knob, convert: { tsp: 0.1 } }
+grapes:          { name: grapes, aisle: produce, buy: fresh, unit: lb }
+green-beans:     { name: green beans, aisle: produce, buy: fresh, unit: lb }
+lemons:          { name: lemon, aisle: produce, buy: fresh }
+limes:           { name: lime, aisle: produce, buy: fresh }
+pineapple:       { name: pineapple, aisle: produce, buy: fresh }
+shredded-lettuce: { name: shredded lettuce, aisle: produce, buy: fresh, unit: oz, convert: { cup: 1.5 }, package: { size: 8, label: 8 oz bag } }
+snap-peas:       { name: sugar snap peas, short: snap peas, aisle: produce, buy: fresh, unit: lb }
+
+# ── Bakery ─────────────────────────────────────────────────────────────────
+naan:            { name: naan, plural: naan, aisle: bakery, buy: bulk, package: { size: 2, label: 2-pack } }
+pitas:           { name: pocket pita, aisle: bakery, buy: fresh, package: { size: 6, label: 6-pack } }
+slider-buns:     { name: slider bun, aisle: bakery, buy: fresh, package: { size: 12, label: 12-pack } }
+sub-rolls:       { name: sub roll, aisle: bakery, buy: fresh }
+tortillas:       { name: whole-wheat burrito-size tortilla, aisle: bakery, buy: bulk, package: { size: 8, label: 8-pack } }
+
+# ── Meat ───────────────────────────────────────────────────────────────────
+chicken-sausage: { name: smoked chicken sausage (fully cooked), aisle: meat, buy: bulk, unit: oz, package: { size: 12, label: 12 oz pack } }
+chicken-tenderloins: { name: chicken tenderloins, aisle: meat, buy: bulk, unit: lb }
+chicken-thighs:  { name: boneless skinless chicken thighs, aisle: meat, buy: bulk, unit: lb }
+flank-steak:     { name: flank steak, aisle: meat, buy: bulk, unit: lb }
+ground-turkey:   { name: ground turkey (93% lean), aisle: meat, buy: bulk, unit: lb }
+pepperoni:       { name: pepperoni, aisle: meat, buy: bulk, unit: oz, package: { size: 6, label: 6 oz pack } }
+pork-shoulder:   { name: boneless pork shoulder, aisle: meat, buy: bulk, unit: lb }
+
+# ── Dairy & eggs ───────────────────────────────────────────────────────────
+butter:          { name: butter, aisle: dairy, buy: bulk, staple: true, unit: tbsp }
+cheddar:         { name: shredded sharp cheddar, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 4 }, package: { size: 8, label: 8 oz bag } }
+eggs:            { name: egg, aisle: dairy, buy: bulk, package: { size: 18, label: 18-count carton } }
+feta:            { name: crumbled feta, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 4 }, package: { size: 6, label: 6 oz tub } }
+greek-yogurt:    { name: plain Greek yogurt, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 8 }, package: { size: 32, label: 32 oz tub } }
+mexican-cheese:  { name: shredded Mexican-blend cheese, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 4 }, package: { size: 40, label: 2.5 lb bag } }
+milk:            { name: milk, aisle: dairy, buy: fresh, unit: gallon }
+mozzarella:      { name: shredded mozzarella, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 4 }, package: { size: 32, label: 2 lb bag } }
+parmesan:        { name: grated parmesan, aisle: dairy, buy: bulk, unit: oz, convert: { cup: 3 }, package: { size: 8, label: 8 oz container } }
+sour-cream:      { name: sour cream, aisle: dairy, buy: fresh, unit: oz, convert: { cup: 8 }, package: { size: 16, label: 16 oz tub } }
+
+# ── Frozen ─────────────────────────────────────────────────────────────────
+frozen-butternut: { name: frozen cubed butternut squash, aisle: frozen, buy: bulk, unit: oz, convert: { cup: 5 }, package: { size: 12, label: 12 oz bag } }
+frozen-corn:     { name: frozen corn, aisle: frozen, buy: bulk, unit: oz, convert: { cup: 5 }, package: { size: 32, label: 2 lb bag } }
+frozen-edamame:  { name: frozen shelled edamame, aisle: frozen, buy: bulk, unit: oz, convert: { cup: 5 }, package: { size: 12, label: 12 oz bag } }
+frozen-peas:     { name: frozen peas, aisle: frozen, buy: bulk, unit: oz, convert: { cup: 5 }, package: { size: 16, label: 1 lb bag } }
+hash-browns:     { name: frozen shredded hash browns, aisle: frozen, buy: bulk, unit: oz, convert: { cup: 3 }, package: { size: 30, label: 30 oz bag } }
+sausage-patties: { name: turkey breakfast sausage patty, plural: turkey breakfast sausage patties, aisle: frozen, buy: bulk, package: { size: 20, label: large frozen bag (about 20) } }
+waffles:         { name: whole-grain frozen waffle, aisle: frozen, buy: bulk, package: { size: 24, label: large box (24) } }
+
+# ── Pantry ─────────────────────────────────────────────────────────────────
+bbq-sauce:       { name: mild barbecue sauce, aisle: pantry, buy: bulk, unit: oz, convert: { cup: 9 }, package: { size: 18, label: 18 oz bottle }, tags: [smooth] }
+black-beans:     { name: black beans, aisle: pantry, buy: bulk, unit: can }
+elbow-pasta:     { name: whole-wheat elbow pasta, aisle: pantry, buy: bulk, unit: oz, package: { size: 16, label: 1 lb box } }
+marinara:        { name: smooth marinara, aisle: pantry, buy: bulk, unit: oz, convert: { cup: 8 }, package: { size: 24, label: 24 oz jar }, tags: [smooth] }
+pesto:           { name: basil pesto, aisle: pantry, buy: bulk, unit: oz, convert: { cup: 8 }, package: { size: 10, label: 10 oz jar } }
+rice:            { name: long-grain rice (white or brown), aisle: pantry, buy: bulk, unit: lb, convert: { cup: 0.43 }, package: { size: 5, label: 5 lb bag } }
+tortilla-chips:  { name: tortilla chips, aisle: pantry, buy: bulk, unit: oz, package: { size: 18, label: large bag } }
+
+# Pantry staples: usually on hand, listed under "check the pantry".
+apple-cider-vinegar: { name: apple cider vinegar, aisle: pantry, buy: bulk, staple: true, unit: tbsp }
+brown-sugar:     { name: brown sugar, aisle: baking, buy: bulk, staple: true, unit: cup }
+chicken-broth:   { name: low-sodium chicken broth, aisle: pantry, buy: bulk, staple: true, unit: cup, package: { size: 4, label: 32 oz carton } }
+cornstarch:      { name: cornstarch, aisle: baking, buy: bulk, staple: true, unit: tbsp }
+dijon:           { name: Dijon mustard, aisle: pantry, buy: bulk, staple: true, unit: tbsp }
+honey:           { name: honey, aisle: pantry, buy: bulk, staple: true, unit: cup }
+olive-oil:       { name: olive oil, aisle: pantry, buy: bulk, staple: true, unit: tbsp }
+panko:           { name: panko breadcrumbs, aisle: pantry, buy: bulk, staple: true, unit: cup, package: { size: 3, label: 8 oz box } }
+peanut-butter:   { name: peanut butter, aisle: pantry, buy: bulk, staple: true, unit: tbsp }
+rice-vinegar:    { name: rice vinegar, aisle: international, buy: bulk, staple: true, unit: tbsp }
+sesame-oil:      { name: toasted sesame oil, aisle: international, buy: bulk, staple: true, unit: tsp }
+sesame-seeds:    { name: sesame seeds, aisle: international, buy: bulk, staple: true, unit: tbsp }
+soy-sauce:       { name: low-sodium soy sauce, aisle: international, buy: bulk, staple: true, unit: cup }
+
+# Spices (staples).
+black-pepper:    { name: black pepper, aisle: spices, buy: bulk, staple: true, unit: tsp }
+chili-powder:    { name: chili powder (mild), aisle: spices, buy: bulk, staple: true, unit: tsp }
+cumin:           { name: ground cumin, aisle: spices, buy: bulk, staple: true, unit: tsp }
+dried-dill:      { name: dried dill, aisle: spices, buy: bulk, staple: true, unit: tsp }
+dried-oregano:   { name: dried oregano, aisle: spices, buy: bulk, staple: true, unit: tsp }
+garlic-powder:   { name: garlic powder, aisle: spices, buy: bulk, staple: true, unit: tsp }
+onion-powder:    { name: onion powder, aisle: spices, buy: bulk, staple: true, unit: tsp }
+salt:            { name: kosher salt, aisle: spices, buy: bulk, staple: true, unit: tsp }
+smoked-paprika:  { name: smoked paprika, aisle: spices, buy: bulk, staple: true, unit: tsp }
+
+# ── Household ──────────────────────────────────────────────────────────────
+foil:            { name: aluminum foil, aisle: household, buy: bulk, staple: true, unit: roll }
+vacuum-bags:     { name: vacuum sealer bags, aisle: household, buy: bulk, staple: true, unit: roll }

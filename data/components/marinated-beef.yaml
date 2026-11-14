@@ -1,0 +1,26 @@
+name: Marinated beef for stir-fry
+summary: Thin-sliced flank steak in a soy-ginger marinade, sealed raw so it marinates as it freezes.
+yield: { qty: 1.5, unit: lb }
+storage:
+  fridge_days: 2
+  freezer_months: 3
+  freeze: Vacuum-seal flat with the marinade.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: flank-steak, qty: 1.5, unit: lb, prep: sliced thin against the grain }
+  - { item: soy-sauce, qty: 0.25, unit: cup }
+  - { item: brown-sugar, qty: 2, unit: tbsp }
+  - { item: cornstarch, qty: 1, unit: tbsp }
+  - { item: garlic, qty: 3, unit: clove, prep: minced }
+  - { item: ginger, qty: 1, unit: tsp, prep: grated }
+  - { item: sesame-oil, qty: 1, unit: tsp }
+steps:
+  - text: Partly freeze the steak for 20 minutes so it slices thin.
+    minutes: 20
+    active: false
+  - text: Slice the steak thinly against the grain.
+    minutes: 8
+    active: true
+  - text: Toss with the soy sauce, brown sugar, cornstarch, garlic, ginger and sesame oil, then seal.
+    minutes: 4
+    active: true

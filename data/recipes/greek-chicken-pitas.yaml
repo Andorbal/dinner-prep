@@ -1,0 +1,24 @@
+name: Greek Chicken Pitas
+summary: Lemon-oregano chicken in warm pitas with garlic yogurt sauce and lettuce. Wraps up in foil for a car night.
+serves: 4
+spice: 0
+handheld: true
+cuisine: Greek-inspired
+tags: [chicken, sandwiches, on-the-go]
+night_of_minutes: 12
+uses:
+  - { component: lemon-oregano-chicken, qty: 3, unit: cup }
+  - { component: garlic-yogurt-sauce, qty: 1, unit: cup }
+ingredients:
+  - { item: pitas, qty: 6 }
+  - { item: shredded-lettuce, qty: 2, unit: cup }
+  - { item: feta, qty: 0.5, unit: cup, optional: true }
+sides:
+  - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: fruit, item: grapes, qty: 1, unit: lb }
+steps:
+  - text: Warm the chicken in the microwave for 2 minutes.
+    only: prepped
+  - Warm the pitas in the air fryer at 350°F for 2 minutes.
+  - Fill with chicken, lettuce, a spoonful of yogurt sauce and feta for those who want it.
+  - For the car, wrap each pita in foil, with the sauce on the inside so it doesn't drip.
