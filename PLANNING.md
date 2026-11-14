@@ -4,6 +4,15 @@ Every Thursday, draft next week's dinner plan and open a pull request so it can
 be reviewed and adjusted before weekend shopping. This file is the whole job
 description. Read `preferences.md` first; it has the rules.
 
+> **Standing approval:** always open the pull request yourself, without asking
+> first. That is the point of the routine: the PR *is* the review step. (Never
+> merge it; a person does that.)
+
+**Which week:** plan the week that starts the Monday after this Thursday
+(`week_of` = Thursday + 4 days), and pass it explicitly: `--week <week_of>`.
+If `data/plans/<week_of>.yaml` already exists on `main`, or an open PR already
+adds it, there's nothing to do: stop and say so, and open no PR.
+
 ## The routine
 
 1. **Start from main.** Make a branch named `plan/<week_of>` (week_of = next Monday).
@@ -14,7 +23,7 @@ description. Read `preferences.md` first; it has the rules.
 4. **Consider adding to the library.** You are encouraged to add one new recipe most weeks,
    or every week if the library feels thin for a slot (car nights especially).
    See "Adding a recipe" below. New recipes must follow every rule in `preferences.md`.
-5. **Draft:** `npm run plan -- next` (add `--include new-recipe-id` to build the week
+5. **Draft:** `npm run plan -- next --week <week_of>` (add `--include new-recipe-id` to build the week
    around a recipe you just added; `--exclude` to drop one; `--seed x` to reshuffle).
    It writes `data/plans/<week_of>.yaml` and prints a Markdown summary.
 6. **Review the draft like a cook**, and edit the plan file directly:
@@ -29,7 +38,7 @@ description. Read `preferences.md` first; it has the rules.
      and put long hands-off cooks first. Look at `data/plans/2026-11-16.yaml` for the tone.
    - Add `notes:` for anything worth knowing (a swap idea, a thaw reminder).
 7. **Verify:** `npm run check` must pass with no errors. Then `npm run build` must succeed.
-8. **Open the PR** titled `Dinner plan: week of <Month D>`. In the body put:
+8. **Open the PR** (no need to ask for approval) titled `Dinner plan: week of <Month D>`. In the body put:
    - the summary table from `plan next` (update it if you changed dinners),
    - what's new in the library and why,
    - the grocery preview from `npm run plan -- grocery <week_of>:all` (in a collapsed `<details>` block),
