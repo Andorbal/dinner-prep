@@ -1,0 +1,143 @@
+{
+  "$id": "defs.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "day": {
+      "enum": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "tsp",
+        "tbsp",
+        "fl-oz",
+        "cup",
+        "pint",
+        "quart",
+        "gallon",
+        "ml",
+        "l",
+        "oz",
+        "lb",
+        "g",
+        "kg",
+        "each",
+        "clove",
+        "can",
+        "head",
+        "knob",
+        "pinch",
+        "roll",
+        "slice",
+        "jar",
+        "bag"
+      ]
+    },
+    "qty": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "line": {
+      "description": "An ingredient line: an item from ingredients.yaml with a quantity.",
+      "type": "object",
+      "required": [
+        "item",
+        "qty"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "item": {
+          "$ref": "#/definitions/id"
+        },
+        "qty": {
+          "$ref": "#/definitions/qty"
+        },
+        "unit": {
+          "$ref": "#/definitions/unit"
+        },
+        "prep": {
+          "type": "string",
+          "description": "How it's prepared, after a comma: 'minced'"
+        },
+        "note": {
+          "type": "string",
+          "description": "Shown in parentheses: 'for the dip'"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "alt": {
+          "type": "object",
+          "required": [
+            "item",
+            "qty"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "item": {
+              "$ref": "#/definitions/id"
+            },
+            "qty": {
+              "$ref": "#/definitions/qty"
+            },
+            "unit": {
+              "$ref": "#/definitions/unit"
+            },
+            "prep": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "kind": {
+          "enum": [
+            "veg",
+            "fruit",
+            "other"
+          ],
+          "description": "For sides: what kind of side it is."
+        }
+      }
+    },
+    "side": {
+      "$ref": "#/definitions/line"
+    },
+    "use": {
+      "description": "Use of a prep-day component, in the component's yield unit.",
+      "type": "object",
+      "required": [
+        "component",
+        "qty"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "component": {
+          "$ref": "#/definitions/id"
+        },
+        "qty": {
+          "$ref": "#/definitions/qty"
+        },
+        "unit": {
+          "$ref": "#/definitions/unit"
+        }
+      }
+    }
+  }
+}

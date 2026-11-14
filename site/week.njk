@@ -1,0 +1,57 @@
+---
+pagination:
+  data: model.plans
+  size: 1
+  alias: p
+permalink: "/weeks/{{ p.week_of }}/"
+eleventyComputed:
+  title: "Week of {{ p.pretty }}"
+section: /
+---
+{% extends "base.njk" %}
+{% from "macros.njk" import dayCard, prepPanel, cycleBadge, thawCallouts %}
+{% block content %}
+<div class="week-head">
+  <h1>Week of {{ p.pretty }}</h1>
+  {{ cycleBadge(p) }}
+</div>
+{{ thawCallouts(p) }}
+<ul class="days">{% for d in p.dinners %}{{ dayCard(d) }}{% endfor %}</ul>
+{% for n in p.notes %}<p class="callout"><span class="kicker">Note</span><span>{{ n }}</span></p>{% endfor %}
+
+<div class="row2">
+  {{ prepPanel(p) }}
+  <div>
+    {% if p.ledger.thaw.length %}
+    <section class="panel">
+      <h3>Thaw</h3>
+      <ul class="ing">{% for t in p.ledger.thaw %}<li><b>{{ t.text }}</b>, {{ t.when }}</li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+    <section class="panel" style="margin-top:18px">
+      <h3>Freezer <small>after this week</small></h3>
+      {% if p.ledger.toFreezer.length %}<p class="kicker">Goes in this week</p>
+      <ul class="ing">{% for f in p.ledger.toFreezer %}<li>{{ f.text }}</li>{% endfor %}</ul>{% endif %}
+      <p class="kicker" style="margin-top:12px">Total</p>
+      <ul class="ing">{% for f in p.ledger.freezerAfter %}<li><a href="/prep/{{ f.component }}/">{{ f.text }}</a> <span class="muted mono">since {{ f.oldest }}</span></li>{% else %}<li class="muted">Empty</li>{% endfor %}</ul>
+      {% for w in p.ledger.warnings %}<p class="callout"><span class="kicker">Heads up</span><span>{{ w }}</span></p>{% endfor %}
+    </section>
+  </div>
+</div>
+
+<h2 class="section" style="margin-top:40px">Groceries</h2>
+<p class="muted">Bulk = shelf-stable or freezable, bought every two weeks. Fresh = bought each week. <a href="/grocery/?w={{ p.week_of }}:all">Combine weeks in the grocery list builder →</a></p>
+<div class="row2 row3">
+  {% for part in [["Fresh", p.grocery.fresh.lines], ["Bulk", p.grocery.bulk.lines], ["Check the pantry", p.grocery.fresh.pantry.concat(p.grocery.bulk.pantry)]] %}
+  <section class="panel"><h3>{{ part[0] }}</h3><ul class="ing">{% for l in part[1] %}<li>{{ l.text }}</li>{% else %}<li class="muted">Nothing</li>{% endfor %}</ul></section>
+  {% endfor %}
+</div>
+
+{% set fb = [] %}{% for d in p.dinners %}{% if d.feedback %}{% set fb = (fb.push(d), fb) %}{% endif %}{% endfor %}
+{% if fb.length %}
+<h2 class="section" style="margin-top:40px">How it went</h2>
+<div class="scroll-x"><table class="tbl"><thead><tr><th>Night</th><th>Dinner</th>{% for m in model.household.members %}<th>{{ m }}</th>{% endfor %}<th>Note</th></tr></thead><tbody>
+{% for d in fb %}<tr><td class="mono">{{ d.day | upper }}</td><td><a href="/recipes/{{ d.recipe.id }}/">{{ d.recipe.name }}</a></td>{% for f in d.feedback %}<td>{% from "macros.njk" import fb as chip %}{{ chip(f.value) }}</td>{% endfor %}<td>{{ d.feedbackNote or '' }}</td></tr>{% endfor %}
+</tbody></table></div>
+{% endif %}
+{% endblock %}

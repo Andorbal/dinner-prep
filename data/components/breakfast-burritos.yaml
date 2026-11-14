@@ -1,0 +1,31 @@
+name: Breakfast burritos
+summary: Scrambled egg, sausage, hash brown and cheese burritos, rolled ahead.
+yield: { qty: 8, unit: each, one: breakfast burrito, other: breakfast burritos }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Wrap each in foil, then vacuum-seal individually.
+  thaw: No thaw needed. Microwave 2 minutes, then air-fry at 375°F for 4 minutes.
+uses:
+  - { component: sausage-patties, qty: 6 }
+ingredients:
+  - { item: eggs, qty: 12 }
+  - { item: hash-browns, qty: 3, unit: cup }
+  - { item: mexican-cheese, qty: 1.5, unit: cup }
+  - { item: tortillas, qty: 8 }
+  - { item: salt, qty: 0.5, unit: tsp }
+steps:
+  - text: Air-fry the hash browns at 400°F for 12 to 15 minutes, shaking once.
+    minutes: 15
+    active: false
+    gear: [air-fryer]
+  - text: Crumble the sausage into a skillet, add the eggs and salt, and scramble until just set.
+    minutes: 8
+    active: true
+    gear: [stove]
+  - text: Let the filling cool for 10 minutes so the tortillas don't steam.
+    minutes: 10
+    active: false
+  - text: Fill each tortilla with egg and sausage, hash browns and cheese. Roll, wrap in foil and label.
+    minutes: 12
+    active: true

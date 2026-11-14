@@ -1,0 +1,29 @@
+name: Teriyaki chicken
+summary: Pressure-cooker chicken thighs in a homemade honey-soy teriyaki, chopped into bite-size pieces.
+yield: { qty: 6, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Vacuum-seal flat with the sauce in 3-cup bags.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: chicken-thighs, qty: 3, unit: lb }
+  - { item: soy-sauce, qty: 0.5, unit: cup }
+  - { item: honey, qty: 0.333, unit: cup }
+  - { item: rice-vinegar, qty: 2, unit: tbsp }
+  - { item: garlic, qty: 3, unit: clove, prep: minced }
+  - { item: ginger, qty: 1, unit: tsp, prep: grated }
+  - { item: cornstarch, qty: 2, unit: tbsp, prep: stirred into 3 tbsp water }
+steps:
+  - text: Put the chicken in the Instant Pot with the soy sauce, honey, vinegar, garlic, ginger and 1/2 cup water.
+    minutes: 5
+    active: true
+    gear: [instant-pot]
+  - text: Pressure cook on high for 10 minutes, then natural release for 10 minutes.
+    minutes: 30
+    active: false
+    gear: [instant-pot]
+  - text: Lift out the chicken and chop it. Switch to Sauté, stir in the cornstarch slurry and simmer until thick. Return the chicken and stir.
+    minutes: 10
+    active: true
+    gear: [instant-pot]

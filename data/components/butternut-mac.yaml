@@ -1,0 +1,29 @@
+name: Butternut squash mac and cheese
+summary: Creamy stovetop mac where blended squash disappears into the cheese sauce.
+yield: { qty: 8, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 2
+  freeze: Vacuum-seal in 4-cup portions.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: elbow-pasta, qty: 12, unit: oz }
+  - { item: frozen-butternut, qty: 12, unit: oz }
+  - { item: milk, qty: 1.5, unit: cup }
+  - { item: cheddar, qty: 2, unit: cup }
+  - { item: butter, qty: 2, unit: tbsp }
+  - { item: garlic-powder, qty: 0.5, unit: tsp }
+  - { item: salt, qty: 1, unit: tsp }
+steps:
+  - text: Boil the pasta in salted water until just tender. Drain.
+    minutes: 15
+    active: false
+    gear: [stove]
+  - text: Meanwhile, microwave the squash until soft (about 6 minutes), then blend it smooth with the milk.
+    minutes: 8
+    active: true
+    gear: [microwave, blender]
+  - text: Melt the butter in the pasta pot, add the squash mixture and garlic powder, then stir in the cheddar until melted. Fold in the pasta and season with salt.
+    minutes: 6
+    active: true
+    gear: [stove]

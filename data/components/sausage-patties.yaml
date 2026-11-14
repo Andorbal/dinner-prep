@@ -1,0 +1,18 @@
+name: Browned sausage patties
+summary: Turkey breakfast sausage, browned ahead so weeknight sandwiches and burritos only need a reheat.
+yield: { qty: 6, unit: each, one: browned sausage patty, other: browned sausage patties }
+storage:
+  fridge_days: 4
+  freezer_months: 2
+  freeze: Vacuum-seal in a single layer.
+  thaw: Reheat straight from frozen in the air fryer, 350°F for 6 minutes.
+ingredients:
+  - { item: sausage-patties, qty: 6 }
+steps:
+  - text: Brown the patties in a skillet over medium heat, about 4 minutes per side.
+    minutes: 10
+    active: true
+    gear: [stove]
+  - text: Cool on a paper towel.
+    minutes: 10
+    active: false

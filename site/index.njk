@@ -1,0 +1,45 @@
+---
+section: /
+---
+{% extends "base.njk" %}
+{% from "macros.njk" import dayCard, prepPanel, cycleBadge, thawCallouts, car %}
+{% block content %}
+{% set start = model.currentIdx - 1 if model.currentIdx > 0 else 0 %}
+{% for p in model.plans %}{% if loop.index0 >= start %}
+<section class="wk" data-week="{{ p.week_of }}" data-start="{{ p.start }}" data-end="{{ p.end }}" {% if loop.index0 != model.currentIdx %}hidden{% endif %}>
+  <div class="week-head">
+    <h1>Week of {{ p.pretty }}</h1>
+    {{ cycleBadge(p) }}
+    <p class="sub"><a href="/weeks/{{ p.week_of }}/">Full week: prep, freezer and groceries →</a></p>
+  </div>
+  {{ thawCallouts(p) }}
+  <ul class="days">{% for d in p.dinners %}{{ dayCard(d) }}{% endfor %}</ul>
+  <div class="row2">
+    {{ prepPanel(p) }}
+    <div>
+      {% set nx = model.plans[loop.index0 + 1] %}
+      {% if nx %}
+      <section class="next">
+        <p class="kicker">Next up · {{ nx.pretty }}</p>
+        <h2 class="section">Next week · Week {{ nx.cycle }}</h2>
+        <ul class="pills">
+          {% for d in nx.dinners %}<li><a href="/recipes/{{ d.recipe.id }}/prepped/"><small>{{ d.day | upper }}</small>{{ d.recipe.name }}</a></li>{% endfor %}
+        </ul>
+        <p style="margin-top:14px"><a class="btn ghost" href="/weeks/{{ nx.week_of }}/">See next week</a></p>
+      </section>
+      {% else %}
+      <section class="next"><p class="kicker">Next up</p><h2 class="section">Not planned yet</h2><p class="muted">Next week's plan is drafted on Thursday and arrives as a pull request.</p></section>
+      {% endif %}
+      {% if p.ledger.freezerAfter.length %}
+      <section class="panel" style="margin-top:24px">
+        <h3>In the freezer <small>after this week</small></h3>
+        <ul class="ing">{% for f in p.ledger.freezerAfter %}<li><a href="/prep/{{ f.component }}/">{{ f.text }}</a></li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+      <p style="margin-top:22px"><a class="btn" href="/grocery/">Build a grocery list →</a></p>
+    </div>
+  </div>
+</section>
+{% endif %}{% endfor %}
+{% if not model.plans.length %}<p>No plans yet. Run <code>npm run plan -- next</code>.</p>{% endif %}
+{% endblock %}

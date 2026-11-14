@@ -1,0 +1,24 @@
+name: Meatball Subs
+summary: Turkey meatballs simmered in smooth marinara, tucked into rolls and topped with melted mozzarella.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Italian-American
+tags: [turkey, sandwiches]
+night_of_minutes: 12
+uses:
+  - { component: turkey-meatballs, qty: 20 }
+ingredients:
+  - { item: marinara, qty: 1.5, unit: cup }
+  - { item: sub-rolls, qty: 5 }
+  - { item: mozzarella, qty: 1.5, unit: cup }
+  - { item: pesto, qty: 2, unit: tbsp, optional: true }
+sides:
+  - { kind: veg, item: snap-peas, qty: 1, unit: lb }
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+steps:
+  - text: Make sure the meatballs thawed in the fridge overnight. If not, simmer them from frozen for 15 minutes instead of 8.
+    only: prepped
+  - Simmer the meatballs in the marinara, covered, for 8 minutes.
+  - Split the rolls, add 4 meatballs each (a swipe of pesto first is good), and top with mozzarella.
+  - Air-fry at 375°F for 2 to 3 minutes, until the cheese melts.

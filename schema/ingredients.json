@@ -1,0 +1,88 @@
+{
+  "$id": "ingredients.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ingredient catalog (data/ingredients.yaml): id -> item",
+  "type": "object",
+  "propertyNames": {
+    "$ref": "defs.json#/definitions/id"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "name",
+      "aisle",
+      "buy"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "plural": {
+        "type": "string"
+      },
+      "aisle": {
+        "enum": [
+          "produce",
+          "bakery",
+          "meat",
+          "dairy",
+          "frozen",
+          "pantry",
+          "international",
+          "baking",
+          "spices",
+          "household"
+        ]
+      },
+      "buy": {
+        "enum": [
+          "bulk",
+          "fresh"
+        ]
+      },
+      "staple": {
+        "type": "boolean"
+      },
+      "unit": {
+        "$ref": "defs.json#/definitions/unit"
+      },
+      "convert": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "package": {
+        "type": "object",
+        "required": [
+          "size",
+          "label"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "size": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "short": {
+        "type": "string"
+      }
+    }
+  }
+}

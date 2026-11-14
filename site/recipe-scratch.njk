@@ -1,0 +1,12 @@
+---
+pagination:
+  data: model.recipes
+  size: 1
+  alias: r
+permalink: "/recipes/{{ r.id }}/"
+eleventyComputed:
+  title: "{{ r.name }}"
+  description: "{{ r.summary }}"
+section: /recipes/
+---
+{% set view = r.scratch %}{% include "recipe.njk" %}

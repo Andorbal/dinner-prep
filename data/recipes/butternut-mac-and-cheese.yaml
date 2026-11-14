@@ -1,0 +1,22 @@
+name: Butternut Squash Mac and Cheese
+summary: Creamy mac and cheese with blended squash hidden in the sauce, served with peas and apples.
+serves: 4
+spice: 0
+handheld: false
+cuisine: American
+tags: [vegetarian, pasta, kid-favorite]
+night_of_minutes: 15
+uses:
+  - { component: butternut-mac, qty: 8, unit: cup }
+ingredients:
+  - { item: milk, qty: 0.25, unit: cup, note: to loosen when reheating }
+  - { item: panko, qty: 0.25, unit: cup, optional: true, note: crispy top }
+sides:
+  - { kind: veg, item: frozen-peas, qty: 2, unit: cup }
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+steps:
+  - text: Reheat the mac in a covered baking dish with the splash of milk at 350°F for 20 minutes. Uncover, add the panko and bake 5 more.
+    only: prepped
+  - text: Serve straight from the pot, or move it to a baking dish, top with panko and broil 2 minutes.
+    only: scratch
+  - Microwave the peas with a splash of water for 3 minutes.

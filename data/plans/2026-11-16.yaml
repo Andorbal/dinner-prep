@@ -1,0 +1,61 @@
+# Week A: the big prep week. Chicken and meatballs are cooked in double batches;
+# half goes in the freezer for Week B.
+week_of: 2026-11-16
+cycle: A
+
+prep:
+  batches:
+    - { component: lime-shredded-chicken, times: 2, note: "half for Mon/Wed, half frozen in two 3-cup bags" }
+    - { component: turkey-meatballs, times: 2, note: "half sauced for Tue, half frozen for subs" }
+    - { component: honey-garlic-sauce, times: 1 }
+    - { component: cooked-rice, times: 4 }
+    - { component: egg-bites, times: 1 }
+    - { component: sausage-patties, times: 1 }
+    - { component: lime-crema, times: 1 }
+  timeline:
+    - at: "0:00"
+      title: Start the chicken
+      text: Put 6 lb chicken thighs in the Instant Pot with 1 cup broth, juice of 2 limes, 2 tsp cumin, 2 tsp chili powder, 1 tsp smoked paprika, 1 tsp onion powder, 4 minced garlic cloves and 1 1/2 tsp salt. High pressure 12 minutes, natural release 10.
+    - at: "0:05"
+      title: Start the rice
+      text: Cook 4 cups dry rice on the stove or in the rice cooker. Heat the oven to 400°F.
+    - at: "0:10"
+      title: Make the meatballs
+      text: Mix 2 lb ground turkey, 2 eggs, 3/4 cup panko, 1/3 cup parmesan, 2 tsp garlic powder, 1 tsp onion powder and 1 tsp salt. Roll about 40 one-inch balls and bake on two lined pans for 18 to 20 minutes.
+    - at: "0:35"
+      title: Make the honey-garlic sauce
+      text: Simmer 1/2 cup honey, 1/3 cup soy sauce, 3 garlic cloves, 1 tsp grated ginger and 1 tbsp rice vinegar. Thicken with 1 tbsp cornstarch in 2 tbsp water. Cool and jar.
+    - at: "0:40"
+      title: Make the egg bites
+      text: Drop the oven to 350°F. Whisk 12 eggs, 1/2 cup milk, 1 cup cheese and 1/2 tsp salt. Fill a greased muffin tin; add chopped spinach to half. Bake 20 to 22 minutes.
+    - at: "0:45"
+      title: Chop and brown
+      text: Cut the broccoli into florets and the melon or pineapple into cubes. Wash the grapes and snap peas. Brown 6 sausage patties and cool them for Thursday.
+    - at: "1:05"
+      title: Make the lime crema
+      text: Stir 1 cup Greek yogurt with the juice of 1 lime and a pinch each of salt and garlic powder.
+    - at: "1:20"
+      title: Finish the chicken
+      text: Shred with two forks and stir back into the juices. Put half in two containers for Monday and Wednesday. Vacuum-seal the rest in two flat 3-cup bags and freeze.
+    - at: "1:30"
+      title: Portion and freeze
+      text: Toss half the meatballs with the sauce for Tuesday. Cool, vacuum-seal and freeze the other half. Freeze the extra rice and egg bites too.
+    - at: "1:40"
+      title: Pack and label
+      text: Label every container with its day. Let everything cool before the lids go on.
+
+dinners:
+  mon: { recipe: chicken-burrito-bowls }
+  tue: { recipe: honey-garlic-meatballs }
+  wed: { recipe: chicken-quesadillas }
+  thu: { recipe: waffle-breakfast-sandwiches }
+  fri: { recipe: naan-pizzas }
+
+# Weekly items not tied to a recipe.
+extras:
+  - { item: milk, qty: 1, unit: gallon }
+  - { item: foil, qty: 1, unit: roll }
+  - { item: vacuum-bags, qty: 1, unit: roll }
+
+notes:
+  - Wednesday and Thursday are car nights. Swap them with any two nights you'll be home after 7.

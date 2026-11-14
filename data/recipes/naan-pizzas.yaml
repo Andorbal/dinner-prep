@@ -1,0 +1,29 @@
+name: Build-Your-Own Naan Pizzas
+summary: Personal pizzas on naan, air-fried two at a time. Everyone picks their own sauce and toppings.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Italian-American
+tags: [build-your-own, pizza, no-prep]
+# Pizza Friday is allowed every week.
+min_weeks_between: 1
+night_of_minutes: 15
+ingredients:
+  - { item: naan, qty: 4 }
+  - item: marinara
+    qty: 0.75
+    unit: cup
+    note: for pizza sauce
+    alt: { item: pesto, qty: 0.5, unit: cup }
+  - { item: mozzarella, qty: 2, unit: cup }
+  - { item: pepperoni, qty: 3, unit: oz }
+  - { item: pineapple, qty: 0.25, prep: in small chunks, optional: true }
+sides:
+  - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: veg, item: baby-spinach, qty: 2, unit: cup, note: salad for the grown-ups }
+steps:
+  - Set out the naan, the sauces (smooth marinara, pesto, or olive oil with garlic powder), the cheese and the toppings.
+  - Everyone builds their own pizza.
+  - Air-fry at 375°F for 4 to 6 minutes, two at a time, until the cheese bubbles.
+notes:
+  - Leftover chicken or sliced meatballs make good toppings.

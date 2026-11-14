@@ -1,0 +1,29 @@
+name: Air-Fryer Chicken Nachos
+summary: Sheet-pan-style nachos made in air-fryer batches, so every chip gets cheese.
+serves: 4
+spice: 1
+handheld: false
+cuisine: Tex-Mex
+tags: [chicken, build-your-own]
+night_of_minutes: 12
+uses:
+  - { component: lime-shredded-chicken, qty: 3, unit: cup }
+  - { component: lime-crema, qty: 1, unit: cup }
+ingredients:
+  - { item: tortilla-chips, qty: 9, unit: oz }
+  - { item: black-beans, qty: 1, unit: can, prep: rinsed and drained }
+  - { item: frozen-corn, qty: 1, unit: cup }
+  - { item: mexican-cheese, qty: 2, unit: cup }
+  - item: avocado
+    qty: 2
+    prep: diced
+    alt: { item: sour-cream, qty: 0.5, unit: cup }
+sides:
+  - { kind: veg, item: shredded-lettuce, qty: 2, unit: cup }
+  - { kind: fruit, item: grapes, qty: 1, unit: lb }
+steps:
+  - text: Warm the thawed chicken in the microwave for 2 minutes.
+    only: prepped
+  - Line the air-fryer basket with foil. Layer chips, chicken, beans, corn and cheese.
+  - Air-fry at 375°F for 4 to 5 minutes per batch, until the cheese melts.
+  - Top with avocado (or sour cream), lettuce and lime crema at the table.

@@ -1,0 +1,22 @@
+name: Breakfast Waffle Sandwiches
+summary: An egg bite and a sausage patty between two crisp waffles. No fork or syrup needed.
+serves: 4
+spice: 0
+handheld: true
+cuisine: American
+tags: [on-the-go, breakfast-for-dinner, eggs]
+night_of_minutes: 10
+uses:
+  - { component: egg-bites, qty: 6 }
+  - { component: sausage-patties, qty: 6 }
+ingredients:
+  - { item: waffles, qty: 12 }
+  - { item: peanut-butter, qty: 2, unit: tbsp, optional: true }
+  - { item: honey, qty: 2, unit: tbsp, optional: true }
+sides:
+  - { kind: fruit, item: bananas, qty: 4 }
+  - { kind: veg, item: snap-peas, qty: 1, unit: lb }
+steps:
+  - Air-fry the waffles, egg bites and sausage at 350°F for 5 minutes.
+  - Stack an egg bite and a sausage patty between two waffles. A thin smear of peanut butter or a drizzle of honey inside adds a little sweetness.
+  - Wrap each sandwich in foil and pack in an insulated bag.

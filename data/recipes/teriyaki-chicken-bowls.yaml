@@ -1,0 +1,24 @@
+name: Teriyaki Chicken Rice Bowls
+summary: Sticky teriyaki chicken over rice with edamame and broccoli, with sesame seeds for anyone who wants them.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Japanese-inspired
+tags: [chicken, rice, build-your-own]
+night_of_minutes: 12
+uses:
+  - { component: teriyaki-chicken, qty: 3, unit: cup }
+  - { component: cooked-rice, qty: 5, unit: cup }
+ingredients:
+  - { item: frozen-edamame, qty: 2, unit: cup }
+  - { item: broccoli, qty: 1, prep: cut into florets }
+  - { item: olive-oil, qty: 1, unit: tbsp }
+  - { item: sesame-seeds, qty: 1, unit: tbsp, optional: true }
+sides:
+  - { kind: fruit, item: pineapple, qty: 0.5, prep: cubed }
+steps:
+  - text: Reheat the chicken and rice in the microwave, covered, 2 to 3 minutes each.
+    only: prepped
+  - Microwave the edamame with a splash of water for 3 minutes.
+  - Toss the broccoli with the oil and air-fry at 400°F for 8 minutes.
+  - Build bowls with rice, chicken, edamame and broccoli. Sprinkle with sesame seeds.

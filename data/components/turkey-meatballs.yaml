@@ -1,0 +1,31 @@
+name: Turkey meatballs
+summary: Tender baked turkey meatballs with parmesan. Plain, so they work with honey-garlic sauce or marinara.
+yield: { qty: 20, unit: each, one: turkey meatball, other: turkey meatballs }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Cool completely, then vacuum-seal in a single layer.
+  thaw: Overnight in the fridge, or simmer straight from frozen in sauce for 15 minutes.
+ingredients:
+  - { item: ground-turkey, qty: 1, unit: lb }
+  - { item: eggs, qty: 1 }
+  - { item: panko, qty: 0.375, unit: cup }
+  - { item: parmesan, qty: 3, unit: tbsp }
+  - { item: garlic-powder, qty: 1, unit: tsp }
+  - { item: onion-powder, qty: 0.5, unit: tsp }
+  - { item: salt, qty: 0.5, unit: tsp }
+steps:
+  - text: Heat the oven to 400°F and line a sheet pan with parchment.
+    minutes: 10
+    active: false
+    gear: [oven]
+  - text: Mix everything with your hands until just combined, then roll into 1-inch balls (kids can help).
+    minutes: 15
+    active: true
+  - text: Bake for 18 to 20 minutes, until 165°F inside.
+    minutes: 20
+    active: false
+    gear: [oven]
+  - text: Cool on the pan before storing.
+    minutes: 10
+    active: false

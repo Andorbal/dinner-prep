@@ -1,0 +1,45 @@
+# Week B: the light prep week. Runs on the chicken and meatballs frozen in Week A.
+week_of: 2026-11-23
+cycle: B
+
+prep:
+  batches:
+    - { component: cooked-rice, times: 1 }
+    - { component: sausage-patties, times: 1 }
+    - { component: chicken-burritos, times: 1, note: "eat 4, freeze 4" }
+    - { component: breakfast-burritos, times: 1, note: "eat 4, freeze 4" }
+    - { component: lime-crema, times: 1 }
+  timeline:
+    - at: Sat night
+      title: Thaw
+      text: Move both bags of chicken and the meatballs from the freezer to the fridge.
+    - at: "0:00"
+      title: Rice and hash browns
+      text: Cook 1 cup dry rice. Air-fry 3 cups frozen hash browns at 400°F for 12 to 15 minutes, shaking once.
+    - at: "0:05"
+      title: Scramble the eggs
+      text: Brown 6 sausage patties, crumble them, then scramble with 12 eggs and 1/2 tsp salt. Cool 10 minutes.
+    - at: "0:20"
+      title: Roll the burritos
+      text: "Chicken burritos: one bag of chicken, rice, black beans and cheese. Breakfast burritos: eggs and sausage, hash browns and cheese. Make 8 of each, wrap in foil and label."
+    - at: "0:35"
+      title: Finish up
+      text: Refrigerate 4 of each for Wednesday and Thursday; vacuum-seal and freeze the rest. Make the lime crema, then wash and cut the week's produce.
+
+dinners:
+  mon: { recipe: meatball-subs }
+  tue: { recipe: chicken-nachos }
+  wed: { recipe: chicken-burritos-to-go }
+  thu: { recipe: breakfast-burritos-to-go }
+  fri:
+    recipe: naan-pizzas
+    sides:
+      - { kind: veg, item: broccoli, qty: 1, prep: air-fried }
+      - kind: fruit
+        item: cantaloupe
+        qty: 0.5
+        prep: cubed
+        alt: { item: pineapple, qty: 0.5, prep: cubed }
+
+extras:
+  - { item: milk, qty: 1, unit: gallon }

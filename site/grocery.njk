@@ -1,0 +1,36 @@
+---
+title: Grocery list
+section: /grocery/
+---
+{% extends "base.njk" %}
+{% block content %}
+<div class="week-head"><h1>Grocery list</h1><span class="badge">FOR ANYLIST</span>
+<p class="sub">Pick the weeks you're shopping for. “All” is everything, “Fresh” is produce, bakery and dairy for that week, “Bulk” is the shelf-stable and freezer stuff. Then paste into AnyList's “Add multiple items”.</p></div>
+<div class="gb">
+  <form id="gweeks" aria-label="Weeks to include">
+    <ul class="gweeks">
+    {% for w in model.groceryData.weeks %}
+      <li class="gweek" data-week="{{ w.week_of }}" data-start="{{ w.start }}" data-end="{{ w.end }}">
+        <div class="wh"><b>Week of {{ w.pretty }}</b><span class="kicker">Week {{ w.cycle }}</span></div>
+        <p class="din">{{ w.dinners | join(" · ") }}</p>
+        <fieldset class="seg" style="padding:0;margin:0">
+          <legend class="sr-only">Week of {{ w.pretty }}</legend>
+          {% for m in [["none","Skip"],["all","All"],["fresh","Fresh"],["bulk","Bulk"]] %}
+          <label><input type="radio" name="w-{{ w.week_of }}" value="{{ m[0] }}"{% if m[0] == 'none' %} checked{% endif %}><span>{{ m[1] }}</span></label>
+          {% endfor %}
+        </fieldset>
+      </li>
+    {% endfor %}
+    </ul>
+    <p style="margin-top:14px"><label class="check"><input type="checkbox" id="staples"> Include pantry staples (spices, oil, broth…)</label></p>
+  </form>
+  <div class="out">
+    <div class="bar"><span class="kicker" id="count">0 items</span><span><button class="btn" type="button" id="copy">Copy list</button></span></div>
+    <label class="sr-only" for="list">Grocery list</label>
+    <textarea id="list" readonly spellcheck="false"></textarea>
+    <p class="muted" id="pantry" style="font-size:14px"></p>
+  </div>
+</div>
+<script type="application/json" id="grocery-data">{{ model.groceryData | json | safe }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="/assets/js/grocery.js"></script>{% endblock %}

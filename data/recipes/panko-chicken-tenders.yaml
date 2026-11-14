@@ -1,0 +1,21 @@
+name: Crispy Panko Chicken Tenders
+summary: Parmesan-panko tenders air-fried straight from the freezer, with a honey-mustard dip.
+serves: 4
+spice: 0
+handheld: true
+cuisine: American
+tags: [chicken, kid-favorite, on-the-go, freezer-friendly]
+night_of_minutes: 15
+uses:
+  - { component: panko-tenders, qty: 20 }
+ingredients:
+  - { item: honey, qty: 3, unit: tbsp, note: for the dip }
+  - { item: dijon, qty: 2, unit: tbsp, note: for the dip }
+  - { item: greek-yogurt, qty: 0.25, unit: cup, note: for the dip }
+sides:
+  - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+steps:
+  - Air-fry the tenders from frozen at 400°F for 12 to 14 minutes in batches, flipping halfway, until 165°F inside.
+  - Stir the honey, Dijon and yogurt together for dipping.
+  - For the car, pack the tenders in foil with the dip in a small lidded cup.

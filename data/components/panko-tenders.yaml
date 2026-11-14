@@ -1,0 +1,26 @@
+name: Panko chicken tenders (raw, frozen)
+summary: Parmesan-panko breaded tenders, frozen raw so they air-fry straight from the freezer.
+yield: { qty: 20, unit: each, one: breaded chicken tender, other: breaded chicken tenders }
+storage:
+  fridge_days: 1
+  freezer_months: 3
+  freeze: Freeze on a lined tray for 1 hour, then vacuum-seal.
+  thaw: No thaw. Air-fry from frozen.
+ingredients:
+  - { item: chicken-tenderloins, qty: 2, unit: lb }
+  - { item: eggs, qty: 2, prep: beaten }
+  - { item: panko, qty: 1.5, unit: cup }
+  - { item: parmesan, qty: 0.5, unit: cup }
+  - { item: garlic-powder, qty: 1, unit: tsp }
+  - { item: smoked-paprika, qty: 1, unit: tsp }
+  - { item: salt, qty: 1, unit: tsp }
+steps:
+  - text: Mix the panko, parmesan, garlic powder, paprika and salt in a shallow dish. Beat the eggs in another.
+    minutes: 4
+    active: true
+  - text: Dip each tender in egg, then press into the crumbs. Lay on a lined sheet pan.
+    minutes: 15
+    active: true
+  - text: Freeze on the pan for an hour, then vacuum-seal.
+    minutes: 60
+    active: false

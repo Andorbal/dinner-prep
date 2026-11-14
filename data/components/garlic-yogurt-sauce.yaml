@@ -1,0 +1,15 @@
+name: Garlic yogurt sauce
+summary: A cucumber-free take on tzatziki with lemon and dill.
+yield: { qty: 1, unit: cup }
+storage:
+  fridge_days: 5
+ingredients:
+  - { item: greek-yogurt, qty: 1, unit: cup }
+  - { item: lemons, qty: 0.5, prep: juiced }
+  - { item: garlic, qty: 1, unit: clove, prep: grated }
+  - { item: dried-dill, qty: 1, unit: tsp }
+  - { item: salt, qty: 0.25, unit: tsp }
+steps:
+  - text: Stir everything together and refrigerate. It gets better after an hour.
+    minutes: 3
+    active: true

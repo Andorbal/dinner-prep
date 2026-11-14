@@ -1,0 +1,27 @@
+name: Honey-garlic sauce
+summary: Sweet, glossy, kid-approved stovetop sauce for meatballs, chicken or stir-fries.
+yield: { qty: 1, unit: cup }
+storage:
+  fridge_days: 14
+  freezer_months: 3
+  freeze: Freeze in a small jar or bag.
+  thaw: Overnight in the fridge.
+ingredients:
+  - { item: honey, qty: 0.5, unit: cup }
+  - { item: soy-sauce, qty: 0.333, unit: cup }
+  - { item: garlic, qty: 3, unit: clove, prep: minced }
+  - { item: ginger, qty: 1, unit: tsp, prep: grated }
+  - { item: rice-vinegar, qty: 1, unit: tbsp }
+  - { item: cornstarch, qty: 1, unit: tbsp, prep: stirred into 2 tbsp water }
+steps:
+  - text: Simmer the honey, soy sauce, garlic, ginger and vinegar in a small pot for 3 minutes.
+    minutes: 5
+    active: true
+    gear: [stove]
+  - text: Stir in the cornstarch slurry and simmer 1 minute more until glossy and thick.
+    minutes: 2
+    active: true
+    gear: [stove]
+  - text: Cool, then store in a jar.
+    minutes: 10
+    active: false

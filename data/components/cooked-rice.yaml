@@ -1,0 +1,23 @@
+name: Cooked rice
+summary: Plain rice for the week. Brown, white or half and half all work.
+yield: { qty: 3, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 3
+  freeze: Cool quickly, then vacuum-seal flat in 2- or 3-cup portions.
+  thaw: Microwave straight from frozen with a splash of water, covered, 2 to 3 minutes.
+ingredients:
+  - { item: rice, qty: 1, unit: cup, prep: dry }
+  - { item: salt, qty: 0.25, unit: tsp }
+steps:
+  - text: Rinse the rice and add it to a pot (or rice cooker) with 1 1/2 cups water per cup of white rice, 2 cups per cup of brown, plus the salt.
+    minutes: 3
+    active: true
+    gear: [stove]
+  - text: Bring to a boil, cover, and simmer on low (white 15 minutes, brown 40), then rest 10 minutes off the heat.
+    minutes: 30
+    active: false
+    gear: [stove]
+  - text: Fluff and spread on a sheet pan to cool before packing.
+    minutes: 3
+    active: true
