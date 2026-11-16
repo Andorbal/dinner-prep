@@ -32,14 +32,15 @@ function showTab(name, scroll = true) {
   secs.forEach((s) => (s.hidden = s.dataset.sec !== name));
   tabs.forEach((t) => t.setAttribute('aria-current', String(t.dataset.tab === name)));
   state.tab = name;
-  root.dataset.tab = name;
+  root.dataset.showing = name;
   save();
   closePanel();
   clearSelection();
   if (scroll) root.scrollIntoView({ block: 'start' });
 }
 document.addEventListener('click', (e) => {
-  const a = e.target.closest('[data-tab]');
+  // Only tab links and the "next section" buttons switch tabs; other links navigate normally.
+  const a = e.target.closest('a[data-tab]');
   if (!a) return;
   e.preventDefault();
   showTab(a.dataset.tab);
