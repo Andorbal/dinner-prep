@@ -165,6 +165,25 @@ function closePanel() {
   document.body.classList.remove('wf-open');
 }
 $('.wf-close', panel)?.addEventListener('click', closePanel);
+
+// On wide screens the panel is docked beside the steps; it can be hidden so the
+// steps get the full width. Hidden, "What's this for?" slides it in over the
+// steps instead, and ✕ slides it away. Remembered per device.
+let panelHidden = false;
+try {
+  panelHidden = localStorage.getItem('panelHidden') === '1';
+} catch (e) {}
+function setPanelHidden(hidden) {
+  panelHidden = hidden;
+  root.classList.toggle('panel-hidden', hidden);
+  closePanel();
+  try {
+    localStorage.setItem('panelHidden', hidden ? '1' : '0');
+  } catch (e) {}
+}
+root.classList.toggle('panel-hidden', panelHidden);
+$('.wf-hide', panel)?.addEventListener('click', () => setPanelHidden(true));
+$('.pm-showpanel')?.addEventListener('click', () => setPanelHidden(false));
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closePanel();

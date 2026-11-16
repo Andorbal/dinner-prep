@@ -338,6 +338,8 @@ footer.foot button { appearance: none; background: none; border: none; color: in
 .whatfor { position: sticky; top: 92px; max-height: calc(100vh - 110px); overflow: auto; border: 2px solid var(--ink); background: var(--card); padding: 14px 16px; }
 .wf-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .wf-head h2 { font-weight: 800; font-stretch: 75%; font-size: 1.35rem; text-transform: uppercase; }
+.wf-head > button + button { margin-left: 6px; }
+.wf-hide { appearance: none; cursor: pointer; min-height: 44px; padding: 6px 12px; margin-left: auto; font: 500 0.9rem/1 var(--mono); background: none; border: 2px solid var(--ink); color: var(--ink); }
 .wf-close { appearance: none; cursor: pointer; min-width: 44px; min-height: 44px; font-size: 1.2rem; background: none; border: 2px solid var(--ink); color: var(--ink); }
 .wf-body { font-size: 1rem; }
 .wf-g { margin-top: 14px; }
@@ -406,6 +408,17 @@ footer.foot button { appearance: none; background: none; border: none; color: in
 }
 @media (min-width: 1001px) {
   .wf-close { display: none; }
+  .pm-showpanel { display: none; }
+  /* Hidden: the steps take the full width; the panel slides in from the right when asked for. */
+  .pm.panel-hidden .pm-showpanel { display: inline-flex; align-items: center; }
+  .pm.panel-hidden .pm-body { grid-template-columns: 1fr; }
+  .pm.panel-hidden .whatfor { position: fixed; top: 0; right: 0; bottom: 0; z-index: 50; width: min(420px, 90vw); max-height: none; border-width: 0 0 0 3px; box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25); transform: translateX(105%); transition: transform 0.2s ease-out; }
+  .pm.panel-hidden .whatfor.open { transform: none; }
+  .pm.panel-hidden .wf-close { display: inline-block; }
+  .pm.panel-hidden .wf-hide { display: none; }
+}
+@media (max-width: 1000px) {
+  .wf-hide, .pm-showpanel { display: none; }
 }
 .narrow { display: none; }
 @media (max-width: 700px) {
