@@ -1,0 +1,32 @@
+name: Smash Burgers and Oven Fries
+summary: Thin, crispy-edged burgers smashed in a hot skillet, with oven fries. A cook-night dinner where everyone builds their own.
+serves: 4
+spice: 0
+handheld: false
+cook_night: true
+cuisine: American
+tags: [beef, burgers, build-your-own]
+night_of_minutes: 35
+ingredients:
+  - { item: frozen-fries, qty: 24, unit: oz }
+  - { item: ground-beef, qty: 1.5, unit: lb, note: 8 patties }
+  - { item: salt, qty: 1, unit: tsp }
+  - { item: black-pepper, qty: 0.5, unit: tsp }
+  - { item: american-cheese, qty: 8 }
+  - { item: burger-buns, qty: 6 }
+  - { item: ketchup, qty: 4, unit: tbsp }
+  - { item: dill-pickles, qty: 1, unit: jar, optional: true }
+  - { item: shredded-lettuce, qty: 1, unit: cup, optional: true }
+sides:
+  - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: fruit, item: apples, qty: 3, prep: sliced }
+  - { kind: other, item: ranch, qty: 0.25, unit: cup, note: for the carrots }
+steps:
+  - Heat the oven to 425°F (or what the fries bag says). Spread the fries on two sheet pans and bake 20 to 25 minutes, flipping once halfway.
+  - Divide the beef into 8 loose balls, about 3 ounces each. Don't pack them tight.
+  - When the fries have about 10 minutes left, heat a large skillet over medium-high for 3 minutes until very hot. Toast the buns cut side down for 1 minute and set them aside.
+  - Put 3 or 4 balls in the skillet. Lay a square of parchment on one and press it flat and thin with a sturdy spatula (push down on the spatula with your other hand). Repeat with the rest. Season with salt and pepper.
+  - Cook 2 minutes without moving them, until the edges are dark brown and crisp. Scrape under each one, flip, add a slice of cheese, and cook 1 minute more. Repeat with the rest.
+  - Everyone builds their own with ketchup, pickles and lettuce. Carrots, ranch and apple slices on the side.
+notes:
+  - Grown-ups usually want two patties, kids one or two. Ground beef from a freezer share works perfectly here.

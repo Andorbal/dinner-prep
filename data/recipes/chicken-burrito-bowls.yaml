@@ -19,6 +19,7 @@ ingredients:
     prep: sliced or mashed with lime and salt
     alt: { item: shredded-lettuce, qty: 3, unit: cup }
   - { item: limes, qty: 1, prep: cut in wedges }
+  - { item: tortillas, qty: 4, optional: true, note: for anyone who'd rather wrap it }
 sides:
   - kind: fruit
     item: cantaloupe
@@ -26,10 +27,14 @@ sides:
     prep: cubed
     alt: { item: pineapple, qty: 0.5, prep: cubed }
 steps:
-  - text: Reheat the chicken (with its juices) and the rice in the microwave, covered, 2 to 3 minutes each.
+  - text: Reheat the chicken (with its juices) in the microwave, covered, 2 to 3 minutes. Then the rice, covered with a splash of water, 4 to 5 minutes, stirring halfway.
     only: prepped
   - Warm the beans and corn together in the microwave or a small pot.
   - Slice the avocado, or mash it with lime and salt. Set out the shredded lettuce for anyone skipping avocado.
   - Put everything in separate bowls on the counter with the cheese, crema and lime wedges. Everyone builds their own bowl, or wraps it in a tortilla.
+microwave:
+  include: [lime-shredded-chicken, cooked-rice, black-beans, frozen-corn, mexican-cheese]
+  separate: Lime crema in a small cup and the melon in its own container. Skip the avocado.
+  reheat: Lid ajar, microwave 2 1/2 to 3 minutes, stir, then 30 more seconds if it isn't hot in the middle. Crema on top.
 notes:
   - The chicken has a little warmth from chili powder. Keep hot sauce on the table for anyone who wants more.

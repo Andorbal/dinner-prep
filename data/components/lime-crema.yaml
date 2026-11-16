@@ -3,12 +3,14 @@ summary: Greek yogurt with lime and garlic. Takes the place of salsa and sour cr
 yield: { qty: 1, unit: cup }
 storage:
   fridge_days: 5
+  container: jar
 ingredients:
   - { item: greek-yogurt, qty: 1, unit: cup }
   - { item: limes, qty: 1, prep: juiced }
   - { item: garlic-powder, qty: 0.125, unit: tsp }
   - { item: salt, qty: 0.125, unit: tsp }
+tools: [measuring-cups, measuring-spoons, citrus-juicer]
 steps:
-  - text: Stir everything together in a jar and refrigerate.
+  - text: Spoon the yogurt into a jar. Squeeze in the lime juice, add the garlic powder and salt, and stir until smooth. Lid on and into the fridge.
     minutes: 3
     active: true

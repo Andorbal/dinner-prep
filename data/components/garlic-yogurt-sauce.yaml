@@ -9,6 +9,7 @@ ingredients:
   - { item: garlic, qty: 1, unit: clove, prep: grated }
   - { item: dried-dill, qty: 1, unit: tsp }
   - { item: salt, qty: 0.25, unit: tsp }
+tools: [small-bowl, microplane, citrus-juicer, measuring-cups, measuring-spoons]
 steps:
   - text: Stir everything together and refrigerate. It gets better after an hour.
     minutes: 3

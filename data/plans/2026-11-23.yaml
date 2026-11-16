@@ -12,27 +12,70 @@ prep:
   timeline:
     - at: Sat night
       title: Thaw
-      text: Move both bags of chicken and the meatballs from the freezer to the fridge.
+      makes: [lime-shredded-chicken, turkey-meatballs]
+      steps:
+        - "Move from the freezer to the fridge: {thaw}."
     - at: "0:00"
-      title: Rice and hash browns
-      text: Cook 1 cup dry rice. Air-fry 3 cups frozen hash browns at 400°F for 12 to 15 minutes, shaking once.
+      title: Start the rice and hash browns
+      makes: [cooked-rice, breakfast-burritos]
+      steps:
+        - "Rice: rinse {cooked-rice/rice} in a fine-mesh strainer until the water runs mostly clear. Put it in a medium pot with a tight lid, with {cooked-rice/water} and {cooked-rice/salt}. Bring to a boil over high heat with the lid off."
+        - "As soon as it boils, stir once, put the lid on and turn the heat to low. Set a timer for 18 minutes. Then turn the heat off and leave the lid on 10 more minutes."
+        - "Hash browns: air-fry {breakfast-burritos/hash-browns} at 400°F for 12 to 15 minutes, shaking the basket once, until golden."
     - at: "0:05"
-      title: Scramble the eggs
-      text: Brown 6 sausage patties, crumble them, then scramble with 12 eggs and 1/2 tsp salt. Cool 10 minutes.
+      title: Scramble the eggs and sausage
+      makes: [sausage-patties, breakfast-burritos]
+      steps:
+        - "Lay {sausage-patties/sausage-patties} in a large skillet over medium heat. Brown about 4 minutes per side, then break them into small crumbles with the spatula."
+        - "Whisk {breakfast-burritos/eggs} with {breakfast-burritos/salt} in a medium bowl."
+        - "Turn the heat to medium-low, pour the eggs over the sausage and stir gently until just set, 3 to 4 minutes."
+        - "Spread on a plate and let it cool 10 minutes so the tortillas don't steam."
+    - at: "0:15"
+      title: Make the crema and pack the fruit and veggies
+      kid: true
+      makes: [lime-crema, snap-peas, grapes, baby-carrots]
+      steps:
+        - "Crema: spoon {lime-crema/greek-yogurt} into a jar, squeeze in the juice of {lime-crema/limes}, add {lime-crema/garlic-powder} and {lime-crema/salt}, and stir until smooth. Label it: Tue · crema."
+        - "Snap peas: rinse {snap-peas}, snap off the stem ends and pat dry. Containers: {portions:snap-peas}."
+        - "Grapes: rinse, pull off the stems and pat dry. Container: {portions:grapes}."
+        - "Baby carrots, straight from the bag: {portions:baby-carrots}."
+        - "Friday's broccoli and melon get cut Thursday night. They won't keep from Sunday."
     - at: "0:20"
-      title: Roll the burritos
-      text: "Chicken burritos: one bag of chicken, rice, black beans and cheese. Breakfast burritos: eggs and sausage, hash browns and cheese. Make 8 of each, wrap in foil and label."
+      title: Roll the breakfast burritos
+      text: "{breakfast-burritos}."
+      makes: [breakfast-burritos]
+      steps:
+        - "Set out {breakfast-burritos/tortillas}, the egg and sausage, the hash browns and {breakfast-burritos/mexican-cheese}."
+        - "Warm the tortillas in the microwave for 30 seconds so they roll without cracking."
+        - "On each one: about 1/2 cup egg and sausage, a small handful of hash browns, and a sprinkle of cheese, in a line just below the middle."
+        - "Fold in the sides, then roll up tightly from the bottom. Wrap in foil and write B on the foil (for breakfast)."
     - at: "0:35"
-      title: Finish up
-      text: Refrigerate 4 of each for Wednesday and Thursday; vacuum-seal and freeze the rest. Make the lime crema, then wash and cut the week's produce.
+      title: Roll the chicken burritos
+      kid: true
+      text: "{chicken-burritos}, with the thawed chicken and today's rice."
+      makes: [chicken-burritos]
+      steps:
+        - "Set out {chicken-burritos/tortillas}, the thawed bag of chicken (3 cups), the cooled rice (3 cups), {chicken-burritos/black-beans} (rinsed and drained) and {chicken-burritos/mexican-cheese}."
+        - "Warm the tortillas in the microwave for 30 seconds."
+        - "On each one: 1/3 cup chicken, 1/3 cup rice, 2 spoonfuls of beans and 1/4 cup cheese, in a line just below the middle."
+        - "Fold in the sides, then roll up tightly from the bottom. Wrap in foil and write C on the foil (for chicken)."
+    - at: "0:50"
+      title: Pack and freeze
+      makes: [chicken-burritos, breakfast-burritos]
+      steps:
+        - "Chicken burritos: {portions:chicken-burritos}."
+        - "Breakfast burritos: {portions:breakfast-burritos}."
+        - "Freezer burritos: vacuum-seal each foil-wrapped burrito on its own, label it, and lay it flat in the freezer."
+        - "Open the Pack tab and tick everything off."
 
 dinners:
-  mon: { recipe: meatball-subs }
-  tue: { recipe: chicken-nachos }
-  wed: { recipe: chicken-burritos-to-go }
-  thu: { recipe: breakfast-burritos-to-go }
+  mon: { recipe: meatball-subs, night: regular }
+  tue: { recipe: chicken-nachos, night: regular }
+  wed: { recipe: chicken-burritos-to-go, night: car }
+  thu: { recipe: breakfast-burritos-to-go, night: car }
   fri:
     recipe: naan-pizzas
+    night: regular
     sides:
       - { kind: veg, item: broccoli, qty: 1, prep: air-fried }
       - kind: fruit

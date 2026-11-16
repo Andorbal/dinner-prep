@@ -14,6 +14,7 @@ ingredients:
   - { item: garlic-powder, qty: 1, unit: tsp }
   - { item: smoked-paprika, qty: 1, unit: tsp }
   - { item: salt, qty: 1, unit: tsp }
+tools: [{ item: shallow-dish, qty: 2 }, whisk, sheet-pan, parchment, measuring-cups, measuring-spoons, vacuum-sealer]
 steps:
   - text: Mix the panko, parmesan, garlic powder, paprika and salt in a shallow dish. Beat the eggs in another.
     minutes: 4

@@ -32,9 +32,18 @@ roll, slice, jar, bag). Leave `unit` off for plain counts.
 
 - `prep.batches`: which components to make and how many batches (`times`).
   Extras beyond this week's needs go in the freezer automatically.
-- `prep.timeline`: the prep-day schedule, written for people.
-- `dinners`: `mon`–`fri`, each with a `recipe`. Optional `sides` (replaces the recipe's),
-  `note`, `skipped`, `swapped_for`, and `feedback`.
+- `prep.timeline`: the prep-day schedule, written for people. Each step has a `title`, optional `text`,
+  numbered `steps`, `makes` (what it works on), and `kid: true` if a kid can do all of it. Quantities are
+  placeholders like `{cooked-rice/rice}` that expand to real amounts (see `PLANNING.md`).
+- `dinners`: `mon`–`fri`, each with a `recipe`. Optional `night` (regular, car, microwave, cook),
+  `sides` (replaces the recipe's), `note`, `skipped`, `swapped_for`, and `feedback`.
+
+## The pack list
+
+Nothing to write: each prep day's pack list is computed. The freezer ledger knows which dinner takes
+how much of which batch, so every container gets an amount, fridge or freezer, a thaw night and a
+dinner. Produce with `prep_ahead` in `ingredients.yaml` is washed or cut on prep day, one container per
+dinner, if it keeps until then.
 
 Old plans are never deleted: they're the history the generator learns from.
 

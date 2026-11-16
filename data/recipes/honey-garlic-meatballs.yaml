@@ -18,9 +18,13 @@ sides:
   - { kind: fruit, item: apples, qty: 3, prep: sliced }
 steps:
   - Warm the meatballs and sauce together in a covered skillet over medium-low for 8 to 10 minutes, stirring now and then.
-  - text: Reheat the rice in the microwave, covered, for 2 to 3 minutes.
+  - text: Reheat the rice in the microwave, covered with a splash of water, 4 to 5 minutes, stirring halfway.
     only: prepped
   - Toss the broccoli with the oil and salt and air-fry at 400°F for 8 minutes, shaking once.
   - Serve the meatballs over rice with broccoli and apple slices on the side.
+microwave:
+  include: [turkey-meatballs, honey-garlic-sauce, cooked-rice, broccoli]
+  separate: Apples whole (or sliced that morning) in their own container.
+  reheat: Lid ajar, microwave 2 1/2 to 3 minutes until the meatballs are hot in the middle. The broccoli steams while it heats.
 notes:
   - The sauce keeps for two weeks, so a double batch covers a second meatball or stir-fry night.

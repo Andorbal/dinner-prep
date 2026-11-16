@@ -1,0 +1,29 @@
+name: Chicken Parmesan with Spaghetti
+summary: Crispy parmesan-panko chicken topped with smooth marinara and melted mozzarella, over spaghetti. A cook night that leans on prep-day tenders.
+serves: 4
+spice: 0
+handheld: false
+cook_night: true
+cuisine: Italian-American
+tags: [chicken, pasta]
+night_of_minutes: 35
+uses:
+  - { component: panko-tenders, qty: 20 }
+ingredients:
+  - { item: salt, qty: 1, unit: tbsp, note: for the pasta water }
+  - { item: spaghetti, qty: 12, unit: oz }
+  - { item: marinara, qty: 2, unit: cup }
+  - { item: mozzarella, qty: 1.5, unit: cup }
+  - { item: parmesan, qty: 0.25, unit: cup, optional: true, note: for the table }
+sides:
+  - { kind: veg, item: green-beans, qty: 1, unit: lb }
+  - { kind: fruit, item: grapes, qty: 1, unit: lb }
+steps:
+  - Bring a large pot of water to a boil with the salt.
+  - text: Air-fry the tenders straight from frozen at 400°F for 12 to 14 minutes in batches, flipping halfway, until 165°F inside.
+    only: prepped
+  - text: Air-fry the tenders at 400°F for 10 to 12 minutes in batches, flipping halfway, until 165°F inside.
+    only: scratch
+  - Meanwhile, cook the spaghetti as the box says (about 10 minutes). Warm the marinara in a small pot. Microwave the green beans with a splash of water, covered, 4 minutes.
+  - Heat the broiler. Lay the tenders on a foil-lined sheet pan, spoon a tablespoon of marinara on each and top with mozzarella. Broil 2 to 3 minutes until bubbly, watching closely.
+  - Drain the spaghetti and toss it with the rest of the marinara. Serve the chicken on top, with parmesan on the table and grapes on the side.

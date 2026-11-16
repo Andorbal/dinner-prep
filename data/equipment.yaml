@@ -1,0 +1,66 @@
+# Kitchen equipment. Components list what they need under `tools:`, and the
+# prep-day mise en place checklist gathers it all up.
+#
+#   kind    appliance | cookware | utensil | storage
+#           (the checklist adds up cookware and storage across recipes, since
+#           they're in use at the same time; appliances and utensils are shared)
+#   fixed   built in (oven, stove, microwave): never on the checklist
+#   have    false = we don't own one, so nothing may need it
+
+# ── Appliances ─────────────────────────────────────────────────────────────
+oven:            { name: oven, kind: appliance, fixed: true }
+stove:           { name: stove, kind: appliance, fixed: true }
+microwave:       { name: microwave, kind: appliance, fixed: true }
+instant-pot:     { name: Instant Pot (with lid and trivet out of the way), kind: appliance }
+crock-pot:       { name: crock pot, kind: appliance }
+air-fryer:       { name: air fryer, kind: appliance }
+vacuum-sealer:   { name: vacuum sealer, kind: appliance }
+stand-mixer:     { name: stand mixer, kind: appliance }
+blender:         { name: blender, kind: appliance }
+stick-blender:   { name: stick blender, kind: appliance }
+food-processor:  { name: food processor, kind: appliance }
+rice-cooker:     { name: rice cooker, kind: appliance, have: false }
+
+# ── Cookware ───────────────────────────────────────────────────────────────
+large-pot:       { name: large pot with a tight lid (6 quarts or bigger), kind: cookware }
+small-saucepan:  { name: small saucepan, kind: cookware }
+large-skillet:   { name: large skillet, kind: cookware }
+sheet-pan:       { name: rimmed sheet pan, kind: cookware }
+muffin-tin:      { name: 12-cup muffin tin, kind: cookware }
+baking-dish:     { name: 9x13 baking dish, kind: cookware }
+
+# ── Utensils ───────────────────────────────────────────────────────────────
+cutting-board:   { name: cutting board, kind: utensil }
+chef-knife:      { name: chef's knife, kind: utensil }
+paring-knife:    { name: paring knife, kind: utensil }
+measuring-cups:  { name: dry measuring cups, kind: utensil }
+liquid-measure:  { name: 2-cup liquid measuring cup, kind: utensil }
+measuring-spoons: { name: measuring spoons, kind: utensil }
+large-bowl:      { name: large mixing bowl, kind: cookware }
+medium-bowl:     { name: medium mixing bowl, kind: cookware }
+small-bowl:      { name: small bowl, kind: cookware }
+shallow-dish:    { name: shallow dish (pie plate or bowl), kind: cookware }
+whisk:           { name: whisk, kind: utensil }
+wooden-spoon:    { name: wooden spoon, kind: utensil }
+spatula:         { name: flat spatula (turner), kind: utensil }
+rubber-spatula:  { name: rubber spatula, kind: utensil }
+tongs:           { name: tongs, kind: utensil }
+forks:           { name: two big forks (for shredding), kind: utensil }
+ladle:           { name: ladle or 1/3-cup measure (for filling), kind: utensil }
+fine-strainer:   { name: fine-mesh strainer, kind: utensil }
+colander:        { name: colander, kind: utensil }
+citrus-juicer:   { name: citrus juicer (or a fork), kind: utensil }
+microplane:      { name: microplane grater, kind: utensil }
+garlic-press:    { name: garlic press (or a knife), kind: utensil }
+can-opener:      { name: can opener, kind: utensil }
+thermometer:     { name: instant-read thermometer, kind: utensil }
+cooling-rack:    { name: cooling rack or a plate with paper towels, kind: utensil }
+kitchen-scale:   { name: kitchen scale (handy for portioning produce), kind: utensil }
+
+# ── Storage ────────────────────────────────────────────────────────────────
+containers:      { name: lidded containers, kind: storage }
+jar:             { name: glass jar with lid (pint), kind: storage }
+vacuum-bags:     { name: vacuum-seal bags, kind: storage }
+foil:            { name: aluminum foil, kind: storage }
+parchment:       { name: parchment paper, kind: storage }
+labels:          { name: masking tape and a marker (for labels), kind: storage }

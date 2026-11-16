@@ -1,23 +1,31 @@
 name: Cooked rice
-summary: Plain rice for the week. Brown, white or half and half all work.
+summary: Plain long-grain white rice for the week, made on the stove. 1 cup dry makes about 3 cups cooked.
 yield: { qty: 3, unit: cup }
 storage:
   fridge_days: 4
   freezer_months: 3
   freeze: Cool quickly, then vacuum-seal flat in 2- or 3-cup portions.
-  thaw: Microwave straight from frozen with a splash of water, covered, 2 to 3 minutes.
+  thaw: Microwave straight from frozen with a splash of water, covered, 3 to 4 minutes, stirring halfway.
 ingredients:
-  - { item: rice, qty: 1, unit: cup, prep: dry }
+  - { item: rice, qty: 1, unit: cup }
+  - { item: water, qty: 1.5, unit: cup }
   - { item: salt, qty: 0.25, unit: tsp }
+tools: [large-pot, fine-strainer, measuring-cups, liquid-measure, measuring-spoons, sheet-pan, forks]
 steps:
-  - text: Rinse the rice and add it to a pot (or rice cooker) with 1 1/2 cups water per cup of white rice, 2 cups per cup of brown, plus the salt.
+  - text: Rinse the rice in a fine-mesh strainer under cold water, swishing it with your hand, until the water runs mostly clear (about a minute).
     minutes: 3
     active: true
-    gear: [stove]
-  - text: Bring to a boil, cover, and simmer on low (white 15 minutes, brown 40), then rest 10 minutes off the heat.
-    minutes: 30
+  - text: Put the rice, water and salt in a pot with a tight lid (6 quarts or bigger for 4 cups of dry rice). Bring to a boil over high heat with the lid off.
+    minutes: 8
     active: false
     gear: [stove]
-  - text: Fluff and spread on a sheet pan to cool before packing.
+  - text: As soon as it boils, stir once, put the lid on and turn the heat to low. Set a timer for 18 minutes and don't lift the lid.
+    minutes: 18
+    active: false
+    gear: [stove]
+  - text: Turn the heat off and leave the lid on for 10 more minutes.
+    minutes: 10
+    active: false
+  - text: Fluff with a fork and spread on a sheet pan to cool before packing. (Brown rice instead? Use 2 cups water per cup and simmer 40 minutes.)
     minutes: 3
     active: true

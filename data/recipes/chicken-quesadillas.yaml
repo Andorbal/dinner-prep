@@ -1,11 +1,11 @@
 name: Chicken Quesadillas
-summary: Crisp air-fried quesadillas cut into wedges and wrapped in foil, made to eat in the car.
+summary: Crisp oven-baked quesadillas cut into wedges and wrapped in foil, made to eat in the car.
 serves: 4
 spice: 1
 handheld: true
 cuisine: Tex-Mex
 tags: [on-the-go, chicken]
-night_of_minutes: 15
+night_of_minutes: 20
 uses:
   - { component: lime-shredded-chicken, qty: 3, unit: cup }
 ingredients:
@@ -16,8 +16,12 @@ sides:
   - { kind: veg, item: snap-peas, qty: 1, unit: lb }
   - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
   - { kind: fruit, item: grapes, qty: 1, unit: lb }
+  - { kind: other, item: ranch, qty: 0.5, unit: cup, note: for dipping }
 steps:
-  - Fill half of each tortilla with chicken, beans (for those who want them) and cheese, then fold.
-  - Air-fry at 375°F for 6 to 8 minutes, two at a time, flipping once.
-  - Cut into wedges, wrap in foil, and pack in an insulated bag with a towel on top. They stay warm 45 to 60 minutes.
-  - Pack the veggies and grapes in a lidded container with a small cup of ranch or hummus.
+  - Heat the oven to 425°F with racks in the upper and lower thirds.
+  - text: Warm the chicken in the microwave, covered, for 1 minute so it melts into the cheese.
+    only: prepped
+  - Lay the tortillas on two sheet pans. Cover half of each with cheese, chicken and beans (for those who want them), then a little more cheese. Fold over and press flat.
+  - Bake 5 minutes, flip with a spatula, and bake 4 to 5 minutes more until golden and melty. Swap the pans between racks when you flip.
+  - Cut each into 3 wedges, wrap in foil, and pack in an insulated bag with a towel on top. They stay warm 45 to 60 minutes.
+  - Grab the prepped veggie and grape containers and a small cup of ranch for dipping.

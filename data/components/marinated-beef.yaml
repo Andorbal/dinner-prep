@@ -14,6 +14,7 @@ ingredients:
   - { item: garlic, qty: 3, unit: clove, prep: minced }
   - { item: ginger, qty: 1, unit: tsp, prep: grated }
   - { item: sesame-oil, qty: 1, unit: tsp }
+tools: [cutting-board, chef-knife, medium-bowl, measuring-spoons, microplane, vacuum-sealer]
 steps:
   - text: Partly freeze the steak for 20 minutes so it slices thin.
     minutes: 20
@@ -21,6 +22,6 @@ steps:
   - text: Slice the steak thinly against the grain.
     minutes: 8
     active: true
-  - text: Toss with the soy sauce, brown sugar, cornstarch, garlic, ginger and sesame oil, then seal.
+  - text: In a medium bowl, toss with the soy sauce, brown sugar, cornstarch, garlic, ginger and sesame oil, then seal.
     minutes: 4
     active: true

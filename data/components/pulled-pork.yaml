@@ -16,6 +16,7 @@ ingredients:
   - { item: salt, qty: 2, unit: tsp }
   - { item: chicken-broth, qty: 1, unit: cup }
   - { item: apple-cider-vinegar, qty: 2, unit: tbsp }
+tools: [instant-pot, measuring-spoons, liquid-measure, tongs, large-bowl, forks]
 steps:
   - text: Rub the pork all over with the sugar and spices. Put it in the Instant Pot with the broth and vinegar.
     minutes: 6

@@ -1,0 +1,25 @@
+name: Chicken Fried Rice
+summary: Fried rice with chicken, egg, peas and carrots, made on prep day. Five minutes in a skillet at dinner, or packed into single containers for a grab-and-microwave night.
+serves: 4
+spice: 0
+handheld: false
+cuisine: Chinese-American
+tags: [chicken, rice, eggs, freezer-friendly]
+night_of_minutes: 8
+uses:
+  - { component: chicken-fried-rice, qty: 8, unit: cup }
+sides:
+  - kind: fruit
+    item: pineapple
+    qty: 0.5
+    prep: cubed
+microwave:
+  include: [chicken-fried-rice]
+  separate: Pineapple in its own container.
+  reheat: Sprinkle with a teaspoon of water, lid ajar, microwave 2 1/2 to 3 minutes, stirring halfway.
+steps:
+  - text: Heat a large skillet over medium-high with a teaspoon of oil. Add the fried rice and cook 4 to 5 minutes, stirring now and then, until hot and a little crisp. (Or microwave, covered, 4 to 5 minutes, stirring halfway.)
+    only: prepped
+  - Serve with soy sauce on the table and the pineapple on the side.
+notes:
+  - The peas and carrots are the vegetable. Add a bowl of snap peas if anyone wants something crunchy.

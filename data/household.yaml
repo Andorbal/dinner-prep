@@ -16,8 +16,16 @@ feedback_scale:
 # Weeknights we plan for. Weekends are on their own.
 dinner_days: [mon, tue, wed, thu, fri]
 
-# Nights we get home after 7pm: dinner must be hand-held and eaten in the car.
+# Nights we usually get home after 7pm: dinner must be hand-held and eaten in the car.
+# This is the default; data/schedule.yaml (or a dinner's `night:`) overrides it for a given date.
 late_nights: [wed, thu]
+
+# The kinds of night a dinner can be planned for.
+night_types:
+  regular: { label: At home, about: The usual. 10 to 15 minutes of finishing. }
+  car: { label: In the car, about: Hand-held, wrapped in foil, eaten on the way. }
+  microwave: { label: Grab and microwave, about: "Packed ahead in single containers: grab one from the fridge and reheat. Zero prep." }
+  cook: { label: Cook night, about: A night with extra time for something a little more involved. Still uses prep where it can. }
 
 # Prep happens the day before the week starts (Sunday for a Monday week).
 prep_day: sun
@@ -35,7 +43,8 @@ history_weeks: 16
 # A recipe served within this many weeks is avoided.
 min_weeks_between_repeats: 3
 # Roughly how many of the five dinners should be new-to-us or rarely served.
-new_recipes_per_week: 1
+# Variety matters to us: the planner should add new recipes to the library every week.
+new_recipes_per_week: 2
 
 gear:
   - instant-pot
@@ -49,7 +58,7 @@ gear:
   - blender
   - stick-blender
   - food-processor
-  - rice-cooker
+  # No rice cooker: rice is made on the stove.
 
 # How many things each piece of gear can do at once (used to draft prep timelines).
 gear_capacity:
@@ -59,7 +68,6 @@ gear_capacity:
   crock-pot: 1
   air-fryer: 1
   microwave: 1
-  rice-cooker: 1
 
 # Added to every week's grocery list.
 weekly_extras:
