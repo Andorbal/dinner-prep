@@ -10,17 +10,21 @@ section: /recipes/
 <div class="filters" role="group" aria-label="Filter recipes">
   <button type="button" aria-pressed="true" data-filter="all">All</button>
   <button type="button" aria-pressed="false" data-filter="handheld">In the car</button>
+  <button type="button" aria-pressed="false" data-filter="microwave">Microwave</button>
+  <button type="button" aria-pressed="false" data-filter="cook">Cook night</button>
   <button type="button" aria-pressed="false" data-filter="new">Not made yet</button>
   <button type="button" aria-pressed="false" data-filter="loved">Family favorites</button>
   <button type="button" aria-pressed="false" data-filter="noprep">No prep</button>
 </div>
 <ul class="cards">
 {% for r in model.recipes %}
-  <li data-handheld="{{ r.handheld }}" data-new="{{ r.history.timesServed == 0 }}" data-loved="{{ r.history.score != null and r.history.score >= 1 }}" data-noprep="{{ not r.hasComponents }}">
+  <li data-handheld="{{ r.handheld }}" data-microwave="{{ r.microwave != null }}" data-cook="{{ r.cookNight }}" data-new="{{ r.history.timesServed == 0 }}" data-loved="{{ r.history.score != null and r.history.score >= 1 }}" data-noprep="{{ not r.hasComponents }}">
     <a class="t" href="/recipes/{{ r.id }}/">{{ r.name }}</a>
     <p>{{ r.summary }}</p>
     <div class="meta">
       {% if r.handheld %}{{ car() }}{% endif %}
+      {% if r.microwave %}<span class="car nt-microwave">Microwave</span>{% endif %}
+      {% if r.cookNight %}<span class="car nt-cook">Cook night</span>{% endif %}
       <span class="tag">{{ r.night }} min tonight</span>
       {% if r.history.timesServed %}<span class="tag">made {{ r.history.timesServed }}×</span>{% else %}<span class="tag">new</span>{% endif %}
       {% if r.history.score != null %}<span class="tag">score {{ r.history.score | round(1) }}</span>{% endif %}

@@ -19,4 +19,12 @@ section: /prep/
   </li>
 {% endfor %}
 </ul>
+
+<h2 class="section" style="margin-top:40px">On hand</h2>
+<p class="muted">Big things we've stocked up on (a share of a cow, a bulk buy), from <code>data/stock.yaml</code>. The planner tries to use these, and the grocery list takes them off.</p>
+{% if model.stock.length %}
+<div class="scroll-x"><table class="tbl"><thead><tr><th>Item</th><th>Had</th><th>Left after planned weeks</th><th>Where</th><th>Since</th></tr></thead><tbody>
+{% for s in model.stock %}<tr><td>{{ s.name }}{% if s.note %}<br><span class="muted">{{ s.note }}</span>{% endif %}</td><td class="mono">{{ s.qty }} {{ s.unit }}</td><td class="mono">{{ s.leftQty | qty }} {{ s.shopUnit }}</td><td>{{ s.where or '' }}</td><td class="mono">{{ s.added }}</td></tr>{% endfor %}
+</tbody></table></div>
+{% else %}<p>Nothing listed yet. Add items to <code>data/stock.yaml</code>.</p>{% endif %}
 {% endblock %}

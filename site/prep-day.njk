@@ -1,0 +1,201 @@
+---
+pagination:
+  data: model.plans
+  size: 1
+  alias: p
+permalink: "/weeks/{{ p.week_of }}/prep/"
+eleventyComputed:
+  title: "Prep day · {{ p.prepPretty }}"
+section: /
+bodyClass: prep-mode
+---
+{% extends "base.njk" %}
+{% from "macros.njk" import nightBadge %}
+{% block content %}
+{% set sheet = p.prep.sheet %}
+<div class="pm" data-week="{{ p.week_of }}">
+  <div class="pm-bar" role="toolbar" aria-label="Prep tools">
+    <div class="pm-title">
+      <span class="kicker">Week {{ p.cycle }} prep · ~{{ p.prep.estimate | mins }}</span>
+      <h1>{{ p.prepPretty }}</h1>
+    </div>
+    <nav class="pm-tabs" aria-label="Prep sections">
+      <a href="#setup" data-tab="setup"><span class="wide">1 · </span>Set up</a>
+      <a href="#steps" data-tab="steps"><span class="wide">2 · </span>Steps <span class="pm-count" data-count="steps"></span></a>
+      <a href="#pack" data-tab="pack"><span class="wide">3 · </span>Pack</a>
+      {% if p.nextPrep %}<a href="#next" data-tab="next"><span class="wide">Week</span><span class="narrow">Wk</span> B</a>{% endif %}
+    </nav>
+    <div class="pm-tools">
+      <span class="pm-size" role="group" aria-label="Text size">
+        <button type="button" data-size="-1" aria-label="Smaller text">A−</button>
+        <button type="button" data-size="0" aria-label="Reset text size">A</button>
+        <button type="button" data-size="1" aria-label="Bigger text">A+</button>
+      </span>
+      <button type="button" class="pm-toggle" id="wake" aria-pressed="false" hidden><span class="wide">Keep </span>screen on</button>
+      <button type="button" class="pm-toggle" id="sync"><span class="wide">Share </span>progress</button>
+    </div>
+  </div>
+
+  <div class="pm-body">
+    <div class="pm-main">
+
+      {# ── 1. Set up: mise en place ─────────────────────────────── #}
+      <section id="setup" class="pm-sec" data-sec="setup" aria-labelledby="setup-h">
+        <h2 class="section" id="setup-h">Mise en place</h2>
+        <p class="pm-lede">Get everything out and measured before the first step. Each recipe gets its own list, so measure each into its own bowl. Tick things off as you go.</p>
+        {% if p.ledger.thaw.length %}
+        <div class="callout"><span class="kicker">Thawed?</span><span>{% for t in p.ledger.thaw %}<b>{{ t.text }}</b> should have come out of the freezer {{ t.when }}.{% if not loop.last %} {% endif %}{% endfor %}</span></div>
+        {% endif %}
+        <div class="mise">
+          {% for g in p.prep.mise.groups %}
+          <div class="mise-g">
+            <h3>{{ g.title }} <small>{{ g.sub }}</small></h3>
+            <ul class="checks">
+              {% for i in g.items %}<li><label><input type="checkbox" data-check="mise:{{ g.key }}:{{ loop.index0 }}"><span>{{ i.text }}</span></label></li>{% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+          <div class="mise-g">
+            <h3>Gear <small>appliances, pans and tools</small></h3>
+            <ul class="checks">
+              {% for i in p.prep.mise.gear %}<li><label><input type="checkbox" data-check="mise:gear:{{ i.id }}"><span>{{ i.text }} <em class="for">{{ i.for | join(", ") }}</em></span></label></li>{% endfor %}
+            </ul>
+          </div>
+          <div class="mise-g">
+            <h3>Containers and bags <small>from the pack list</small></h3>
+            <ul class="checks">
+              {% for i in p.prep.mise.storage %}<li><label><input type="checkbox" data-check="mise:store:{{ loop.index0 }}"><span>{{ i.text }}</span></label></li>{% endfor %}
+            </ul>
+          </div>
+        </div>
+        <p><a class="btn" href="#steps" data-tab="steps">Ready: start the steps →</a></p>
+      </section>
+
+      {# ── 2. Steps ─────────────────────────────────────────────── #}
+      <section id="steps" class="pm-sec" data-sec="steps" aria-labelledby="steps-h">
+        <div class="pm-sec-head">
+          <h2 class="section" id="steps-h">Steps</h2>
+          <div class="seg pm-filter" role="group" aria-label="Show steps">
+            <button type="button" data-filter="all" aria-pressed="true">Everyone</button>
+            <button type="button" data-filter="kid" aria-pressed="false">Kid-friendly ({{ p.prep.kidSteps }})</button>
+            <button type="button" data-filter="open" aria-pressed="false">Not done</button>
+          </div>
+        </div>
+        <p class="pm-lede">Tap <b>I'm on it</b> when you start a step and <b>Done</b> when it's finished. Several people can each be on a step. Tap any line to tick it off.</p>
+        <ol class="pm-steps">
+          {% for t in p.prep.timeline %}
+          <li class="step" id="step-{{ t.id }}" data-step="{{ t.id }}"{% if t.kid %} data-kid{% endif %}>
+            <div class="step-head">
+              <span class="step-n">{{ t.n }}</span>
+              <span class="step-at">{{ t.at }}</span>
+              <h3>{{ t.title }}</h3>
+              {% if t.kid %}<span class="kidtag">Kid-friendly</span>{% endif %}
+            </div>
+            <div class="step-body">
+              {% if t.text %}<p class="step-text">{{ t.text }}</p>{% endif %}
+              {% if t.after %}<p class="step-after">{{ t.after }}</p>{% endif %}
+              {% if t.steps.length %}
+              <ol class="sub">
+                {% for s in t.steps %}<li data-sub="{{ t.id }}.{{ loop.index }}">{{ s }}</li>{% endfor %}
+              </ol>
+              {% endif %}
+            </div>
+            <div class="step-actions">
+              <button type="button" class="act-work" data-act="work">I'm on it</button>
+              <button type="button" class="act-done" data-act="done">Done</button>
+              {% if t.makes.length %}<button type="button" class="act-for" data-act="for" data-makes="{{ t.makes | join(' ') }}" aria-controls="whatfor">What's this for?</button>{% endif %}
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+        <p><a class="btn" href="#pack" data-tab="pack">All done: check the pack list →</a></p>
+      </section>
+
+      {# ── 3. Pack list ↔ meals ─────────────────────────────────── #}
+      <section id="pack" class="pm-sec" data-sec="pack" aria-labelledby="pack-h">
+        <h2 class="section" id="pack-h">Pack list</h2>
+        <p class="pm-lede">Everything this prep makes, container by container. Tap a container to see its dinner, or a dinner to see its containers. Tap the box to check it off. Tap anywhere else to clear.</p>
+        <div class="xref">
+          <div class="xref-items">
+            <h3 class="xref-h">What we made</h3>
+            {% for g in sheet.groups %}
+            <div class="pg" data-group="{{ g.key }}">
+              <button type="button" class="pg-head" data-group-sel="{{ g.key }}">
+                <span class="pg-name">{{ g.name }}</span>
+                <span class="pg-total">{{ g.totalText }}</span>
+              </button>
+              {% if g.how %}<p class="pg-how">{{ g.how }}</p>{% endif %}
+              <ul class="portions">
+                {% for x in g.portions %}
+                <li class="portion st-{{ x.storage }}{% if x.spare %} spare{% endif %}" data-id="{{ x.id }}" data-meals="{{ x.meals | join(' ') }}" tabindex="0">
+                  <input type="checkbox" data-check="pack:{{ x.id }}" aria-label="Packed: {{ x.amount }} {{ g.name }}">
+                  <span class="amt">{{ x.amount }}{% if x.about %} <small>{{ x.about }}</small>{% endif %}</span>
+                  <span class="store">{{ x.storageText }}</span>
+                  <span class="for">{{ x.what }}{% if x.alt %} <small>({{ x.alt }})</small>{% endif %}{% if x.optional %} <small>(optional)</small>{% endif %}</span>
+                  {% if x.reheat %}<span class="extra">Reheat: {{ x.reheat }}{% if x.separate %} Separately: {{ x.separate }}{% endif %}</span>{% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="xref-meals">
+            <h3 class="xref-h">Dinners it covers</h3>
+            <ul class="meals">
+              {% for m in sheet.meals %}
+              {% if m.weekStart %}<li class="meal-wk">{% if m.thisWeek %}This week{% else %}Week {{ m.cycle }} · {{ m.week | prettyShort }}{% endif %}</li>{% endif %}
+              <li class="meal{% if not m.items.length %} none{% endif %}" data-meal="{{ m.key }}" data-items="{{ m.items | join(' ') }}" tabindex="0">
+                <span class="meal-day">{{ m.dayShort }}<small>{{ m.pretty | replace(m.dayShort + ", ", "") }}</small></span>
+                <span class="meal-name">{{ m.recipe.name if m.recipe else "—" }}{% if m.skipped %} <small>(skipped)</small>{% endif %}</span>
+                {{ nightBadge(m.night) }}
+                {% if m.elsewhere.length %}<span class="meal-x">Also: {{ m.elsewhere | join("; ") }}</span>{% endif %}
+                {% if m.later.length %}<span class="meal-x">At dinner: {{ m.later | join("; ") }}</span>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {# ── Week B preview (A weeks only) ───────────────────────── #}
+      {% if p.nextPrep %}
+      {% set nx = p.nextPrep %}
+      <section id="next" class="pm-sec" data-sec="next" aria-labelledby="next-h">
+        <h2 class="section" id="next-h">Next week's prep</h2>
+        <p class="pm-lede">A preview of the light prep on {{ nx.prepPretty }} (~{{ nx.estimate | mins }}), so you can see where today's freezer portions end up. <a href="/weeks/{{ nx.week_of }}/prep/">Open it in prep mode →</a></p>
+        {% if nx.thaw.length %}<div class="callout"><span class="kicker">Thaw</span><span>{% for t in nx.thaw %}<b>{{ t.text }}</b>, {{ t.when }}.{% if not loop.last %} {% endif %}{% endfor %}</span></div>{% endif %}
+        <ol class="pm-steps preview">
+          {% for t in nx.timeline %}
+          <li class="step">
+            <details>
+              <summary class="step-head"><span class="step-n">{{ t.n }}</span><span class="step-at">{{ t.at }}</span><h3>{{ t.title }}</h3>{% if t.kid %}<span class="kidtag">Kid-friendly</span>{% endif %}</summary>
+              <div class="step-body">
+                {% if t.text %}<p class="step-text">{{ t.text }}</p>{% endif %}
+                {% if t.steps.length %}<ol class="sub">{% for s in t.steps %}<li>{{ s }}</li>{% endfor %}</ol>{% endif %}
+              </div>
+            </details>
+          </li>
+          {% endfor %}
+        </ol>
+        <h3 class="xref-h" style="margin-top:22px">What it makes</h3>
+        <ul class="ing">
+          {% for g in nx.sheet.groups %}<li><b>{{ g.name }}</b>: {% for x in g.portions %}{{ x.amount }} {{ x.what | lower }}{% if not loop.last %}; {% endif %}{% endfor %}</li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+    </div>
+
+    {# ── What's this for? (side panel on iPad, bottom sheet on phones) ── #}
+    <aside class="whatfor" id="whatfor" aria-labelledby="whatfor-h" aria-live="polite">
+      <div class="wf-head">
+        <h2 id="whatfor-h">What's this for?</h2>
+        <button type="button" class="wf-close" aria-label="Close">✕</button>
+      </div>
+      <div class="wf-body"><p class="muted">Tap <b>What's this for?</b> on a step to see which dinners it feeds, how to split it up, and what goes in the fridge or freezer.</p></div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+</div>
+<script type="application/json" id="prep-data">{{ { "week": p.week_of, "steps": p.prep.timeline | map("id"), "groups": sheet.groups, "meals": sheet.meals } | json | safe }}</script>
+{% endblock %}
+{% block scripts %}<script type="module" src="/assets/js/prep-mode.js"></script>{% endblock %}

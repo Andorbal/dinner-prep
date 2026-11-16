@@ -24,6 +24,20 @@
     el.hidden = el.dataset.thawDate !== today;
   });
 
+  // Text size (footer A−/A+; prep mode has its own buttons that do the same).
+  const SCALES = [0.9, 1, 1.12, 1.25, 1.4, 1.6];
+  document.querySelectorAll('.textsize [data-size]').forEach((b) =>
+    b.addEventListener('click', () => {
+      const html = document.documentElement;
+      const cur = parseFloat(getComputedStyle(html).getPropertyValue('--scale')) || 1;
+      let i = SCALES.findIndex((s) => Math.abs(s - cur) < 0.01);
+      if (i < 0) i = 1;
+      const next = SCALES[Math.max(0, Math.min(SCALES.length - 1, i + Number(b.dataset.size)))];
+      html.style.setProperty('--scale', next);
+      try { localStorage.setItem('textScale', next); } catch (e) {}
+    }),
+  );
+
   // Theme switcher: auto → light → dark.
   const btn = document.getElementById('theme');
   if (btn) {
