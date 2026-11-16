@@ -14,6 +14,10 @@ ingredients:
 sides:
   - { kind: veg, item: frozen-peas, qty: 2, unit: cup }
   - { kind: fruit, item: apples, qty: 3, prep: sliced }
+microwave:
+  include: [butternut-mac, frozen-peas]
+  separate: Apples whole (or sliced that morning) in their own container.
+  reheat: Add a spoonful of milk, lid ajar, microwave 2 minutes, stir, then 1 more minute.
 steps:
   - text: Reheat the mac in a covered baking dish with the splash of milk at 350°F for 20 minutes. Uncover, add the panko and bake 5 more.
     only: prepped

@@ -4,7 +4,7 @@ yield: { qty: 6, unit: cup }
 storage:
   fridge_days: 4
   freezer_months: 3
-  freeze: Vacuum-seal flat in 3-cup bags with some of the juices.
+  freeze: Vacuum-seal flat in 3-cup bags with a few spoonfuls of the juices.
   thaw: Overnight in the fridge, or in a bowl of cold water for an hour.
 ingredients:
   - { item: chicken-thighs, qty: 3, unit: lb }
@@ -16,18 +16,23 @@ ingredients:
   - { item: onion-powder, qty: 0.5, unit: tsp }
   - { item: garlic, qty: 2, unit: clove, prep: minced }
   - { item: salt, qty: 0.75, unit: tsp }
+tools: [instant-pot, liquid-measure, measuring-spoons, citrus-juicer, garlic-press, tongs, large-bowl, forks, thermometer]
 steps:
-  - text: Put the chicken in the Instant Pot with the broth, lime juice, spices, garlic and salt.
+  - text: Put the chicken in the Instant Pot. Add the broth, lime juice, spices, garlic and salt, and stir so every piece gets coated.
     minutes: 5
     active: true
     gear: [instant-pot]
-  - text: Pressure cook on high for 12 minutes, then let the pressure release naturally for 10 minutes. (Crock pot instead? High for 3 to 4 hours.)
-    minutes: 32
+  - text: Lock the lid and turn the valve to Sealing. Pressure Cook on High for 12 minutes. (It takes 10 to 15 minutes to come up to pressure first.)
+    minutes: 27
     active: false
     gear: [instant-pot]
-  - text: Shred the chicken with two forks and stir it back into the juices.
+  - text: When it beeps, let the pressure come down on its own for 10 minutes, then turn the valve to Venting to release the rest. (Crock pot instead? High for 3 to 4 hours.)
+    minutes: 10
+    active: false
+    gear: [instant-pot]
+  - text: Check the thickest piece reads at least 175°F. Lift the chicken into a large bowl with tongs and shred it with two forks.
     minutes: 8
     active: true
-  - text: Portion into 3-cup containers for the fridge, or vacuum-seal flat for the freezer.
+  - text: Stir in about 1 cup of the cooking juices per batch so it stays moist, then portion it.
     minutes: 5
     active: true

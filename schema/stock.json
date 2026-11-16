@@ -1,0 +1,44 @@
+{
+  "$id": "stock.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Big items on hand (data/stock.yaml): freezer meat, bulk buys",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "item",
+          "qty",
+          "added"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "$ref": "defs.json#/definitions/id"
+          },
+          "qty": {
+            "$ref": "defs.json#/definitions/qty"
+          },
+          "unit": {
+            "$ref": "defs.json#/definitions/unit"
+          },
+          "added": {
+            "$ref": "defs.json#/definitions/date"
+          },
+          "where": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$id": "equipment.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kitchen equipment (data/equipment.yaml): id -> item",
+  "type": "object",
+  "propertyNames": {
+    "$ref": "defs.json#/definitions/id"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "name",
+      "kind"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "kind": {
+        "enum": [
+          "appliance",
+          "cookware",
+          "utensil",
+          "storage"
+        ]
+      },
+      "fixed": {
+        "type": "boolean",
+        "description": "Built in (oven, stove): never on the mise en place list."
+      },
+      "have": {
+        "type": "boolean",
+        "description": "false = we don't own one; recipes must not need it."
+      }
+    }
+  }
+}

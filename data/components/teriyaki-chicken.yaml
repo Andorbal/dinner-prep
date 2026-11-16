@@ -13,7 +13,10 @@ ingredients:
   - { item: rice-vinegar, qty: 2, unit: tbsp }
   - { item: garlic, qty: 3, unit: clove, prep: minced }
   - { item: ginger, qty: 1, unit: tsp, prep: grated }
-  - { item: cornstarch, qty: 2, unit: tbsp, prep: stirred into 3 tbsp water }
+  - { item: water, qty: 0.5, unit: cup, note: for the pot }
+  - { item: cornstarch, qty: 2, unit: tbsp }
+  - { item: water, qty: 3, unit: tbsp, note: for the cornstarch }
+tools: [instant-pot, measuring-cups, measuring-spoons, garlic-press, microplane, small-bowl, tongs, cutting-board, chef-knife]
 steps:
   - text: Put the chicken in the Instant Pot with the soy sauce, honey, vinegar, garlic, ginger and 1/2 cup water.
     minutes: 5
@@ -23,7 +26,7 @@ steps:
     minutes: 30
     active: false
     gear: [instant-pot]
-  - text: Lift out the chicken and chop it. Switch to Sauté, stir in the cornstarch slurry and simmer until thick. Return the chicken and stir.
+  - text: Lift out the chicken and chop it. Switch to Sauté. Stir the cornstarch into the 3 tbsp cold water, stir that in and simmer until thick. Return the chicken and stir.
     minutes: 10
     active: true
     gear: [instant-pot]

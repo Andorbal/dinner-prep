@@ -4,6 +4,8 @@ yield: { qty: 8, unit: each, one: breakfast burrito, other: breakfast burritos }
 storage:
   fridge_days: 4
   freezer_months: 3
+  container: foil
+  freeze_in: foil, then a vacuum-seal bag
   freeze: Wrap each in foil, then vacuum-seal individually.
   thaw: No thaw needed. Microwave 2 minutes, then air-fry at 375°F for 4 minutes.
 uses:
@@ -14,6 +16,7 @@ ingredients:
   - { item: mexican-cheese, qty: 1.5, unit: cup }
   - { item: tortillas, qty: 8 }
   - { item: salt, qty: 0.5, unit: tsp }
+tools: [air-fryer, large-skillet, rubber-spatula, medium-bowl, whisk, measuring-cups, foil]
 steps:
   - text: Air-fry the hash browns at 400°F for 12 to 15 minutes, shaking once.
     minutes: 15

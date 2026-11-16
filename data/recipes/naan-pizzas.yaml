@@ -20,10 +20,13 @@ ingredients:
   - { item: pineapple, qty: 0.25, prep: in small chunks, optional: true }
 sides:
   - { kind: veg, item: baby-carrots, qty: 1, unit: lb }
+  - { kind: fruit, item: clementines, qty: 4 }
   - { kind: veg, item: baby-spinach, qty: 2, unit: cup, note: salad for the grown-ups }
+  - { kind: other, item: ranch, qty: 0.25, unit: cup, note: for the carrots and salad }
 steps:
   - Set out the naan, the sauces (smooth marinara, pesto, or olive oil with garlic powder), the cheese and the toppings.
   - Everyone builds their own pizza.
   - Air-fry at 375°F for 4 to 6 minutes, two at a time, until the cheese bubbles.
+  - Carrots and clementines on the side; spinach salad with ranch for the grown-ups.
 notes:
   - Leftover chicken or sliced meatballs make good toppings.

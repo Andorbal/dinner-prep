@@ -14,12 +14,13 @@ ingredients:
   - { item: garlic-powder, qty: 1, unit: tsp }
   - { item: onion-powder, qty: 0.5, unit: tsp }
   - { item: salt, qty: 0.5, unit: tsp }
+tools: [large-bowl, { item: sheet-pan, per_batch: true }, { item: parchment, per_batch: true, note: one sheet per pan }, measuring-cups, measuring-spoons, thermometer]
 steps:
   - text: Heat the oven to 400°F and line a sheet pan with parchment.
     minutes: 10
     active: false
     gear: [oven]
-  - text: Mix everything with your hands until just combined, then roll into 1-inch balls (kids can help).
+  - text: Put everything in a large bowl and mix with your hands until just combined (don't squeeze it hard or they get tough). Roll into 1 1/4-inch balls, about 20 per pound, and set them on the pan almost touching. Kids can help roll.
     minutes: 15
     active: true
   - text: Bake for 18 to 20 minutes, until 165°F inside.

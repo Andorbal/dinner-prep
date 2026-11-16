@@ -1,0 +1,21 @@
+{
+  "$id": "schedule.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "What kind of night each upcoming dinner is (data/schedule.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "nights": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "propertyNames": {
+        "$ref": "defs.json#/definitions/date"
+      },
+      "additionalProperties": {
+        "$ref": "defs.json#/definitions/night"
+      }
+    }
+  }
+}

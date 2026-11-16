@@ -1,5 +1,7 @@
 {% macro car() %}<span class="car"><svg viewBox="0 0 16 10" aria-hidden="true"><path d="M2 6 L3.5 2.5 Q4 1.5 5 1.5 H11 Q12 1.5 12.5 2.5 L14 6 V8.5 H2 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="4.5" cy="8.5" r="1.4" fill="currentColor"/><circle cx="11.5" cy="8.5" r="1.4" fill="currentColor"/></svg>In the car</span>{% endmacro %}
 
+{% macro nightBadge(n) %}{% if n.type == 'car' %}{{ car() }}{% elif n.type == 'microwave' %}<span class="car nt-microwave" title="{{ n.about }}">Microwave</span>{% elif n.type == 'cook' %}<span class="car nt-cook" title="{{ n.about }}">Cook night</span>{% endif %}{% endmacro %}
+
 {% macro cycleBadge(p) %}<span class="badge{% if p.cycle == 'B' %} b{% endif %}">WEEK {{ p.cycle }} · {{ p.label | upper }}</span>{% endmacro %}
 
 {% macro fb(value) %}{% if value %}<span class="fb fb-{{ value }}">{{ value }}</span>{% else %}<span class="fb fb-none">·</span>{% endif %}{% endmacro %}
@@ -9,7 +11,7 @@
   <span class="dn" aria-hidden="true">{{ d.day }}</span>
   <span class="date">{{ d.dayName }} · {{ d.pretty }}</span>
   <a class="dish" href="/recipes/{{ d.recipe.id }}/prepped/">{{ d.recipe.name }}</a>
-  <span class="meta">{% if d.late %}{{ car() }}{% endif %}<span>{{ d.recipe.night }} min</span></span>
+  <span class="meta">{{ nightBadge(d.night) }}<span>{{ d.recipe.night }} min</span></span>
   {% if d.swappedFor %}<span class="swap">Had {{ d.swappedFor.name }} instead</span>{% endif %}
   {% if d.skipped %}<span class="swap">Skipped</span>{% endif %}
   {% if d.note %}<span class="swap">{{ d.note }}</span>{% endif %}
@@ -24,8 +26,9 @@
     {% for b in p.prep.batches %}<li><a href="/prep/{{ b.id }}/" title="{{ b.note or '' }}">{{ b.makes }}</a></li>{% endfor %}
   </ul>
   <ol class="timeline">
-    {% for t in p.prep.timeline %}<li><span class="at">{{ t.at }}</span><span>{% if t.title %}<b>{{ t.title }}.</b> {% endif %}{{ t.text }}</span></li>{% endfor %}
+    {% for t in p.prep.timeline %}<li><span class="at">{{ t.at }}</span><span><b>{{ t.title }}.</b>{% if t.text %} {{ t.text }}{% endif %}{% if t.kid %} <span class="kidtag">Kid-friendly</span>{% endif %}</span></li>{% endfor %}
   </ol>
+  <p class="prep-go"><a class="btn" href="/weeks/{{ p.week_of }}/prep/">Open prep mode →</a> <span class="muted">Checklists, step-by-step tracking and the pack list.</span></p>
 </section>
 {% endmacro %}
 

@@ -1,29 +1,34 @@
 name: Egg bites
-summary: Muffin-tin eggs with cheese, half plain and half with spinach.
+summary: Muffin-tin eggs with cheese, half plain and half with spinach. A good one for a kid to make start to finish.
 yield: { qty: 12, unit: each, one: egg bite, other: egg bites }
 storage:
   fridge_days: 4
   freezer_months: 2
-  freeze: Freeze on a tray, then vacuum-seal.
-  thaw: Air-fry from frozen at 340°F for 8 minutes.
+  freeze: Freeze on a tray for an hour, then vacuum-seal.
+  thaw: Air-fry from frozen at 340°F for 8 minutes, or microwave 60 to 90 seconds.
 ingredients:
   - { item: eggs, qty: 12 }
   - { item: milk, qty: 0.5, unit: cup }
+  - { item: salt, qty: 0.5, unit: tsp }
   - { item: mexican-cheese, qty: 1, unit: cup }
   - { item: baby-spinach, qty: 1, unit: cup, prep: chopped }
-  - { item: salt, qty: 0.5, unit: tsp }
+  - { item: butter, qty: 1, unit: tbsp, prep: softened, note: for greasing the tin }
+tools: [muffin-tin, large-bowl, whisk, liquid-measure, measuring-cups, measuring-spoons, cutting-board, chef-knife, ladle]
 steps:
-  - text: Heat the oven to 350°F and grease a 12-cup muffin tin.
+  - text: Heat the oven to 350°F. Rub the soft butter all over the inside of each muffin cup (a paper towel makes this easy).
     minutes: 10
     active: false
     gear: [oven]
-  - text: Whisk the eggs, milk, cheese and salt. Fill the cups, then stir chopped spinach into half of them.
-    minutes: 6
+  - text: Crack the eggs into a large bowl and fish out any bits of shell. Add the milk and salt and whisk until there are no streaks of white. Stir in the cheese.
+    minutes: 5
     active: true
-  - text: Bake for 20 to 22 minutes, until just set in the middle.
+  - text: Fill 6 of the muffin cups about three-quarters full (a heaping 1/3 cup each). Stir the chopped spinach into the eggs left in the bowl, then fill the other 6.
+    minutes: 3
+    active: true
+  - text: Bake for 20 to 22 minutes, until the middles are set and don't look wet when you gently shake the pan. Use oven mitts.
     minutes: 22
     active: false
     gear: [oven]
-  - text: Cool in the tin for 10 minutes before popping them out.
+  - text: Cool in the tin for 10 minutes, run a butter knife around each one, and pop them out.
     minutes: 10
     active: false

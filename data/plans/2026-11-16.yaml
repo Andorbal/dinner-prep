@@ -1,61 +1,161 @@
 # Week A: the big prep week. Chicken and meatballs are cooked in double batches;
 # half goes in the freezer for Week B.
+#
+# Rearranged on Monday: the late nights moved to Monday and Wednesday, so the
+# hand-held dinners moved with them. Prep had already happened, so the batches
+# below are what was actually made on Sunday.
+#
+# Timeline text uses placeholders that expand to real quantities:
+#   {component/item} → "6 lb boneless skinless chicken thighs"
+#   {portions:id}    → how it splits up, dinner by dinner
+# See PLANNING.md ("Writing the timeline").
 week_of: 2026-11-16
 cycle: A
 
 prep:
   batches:
-    - { component: lime-shredded-chicken, times: 2, note: "half for Mon/Wed, half frozen in two 3-cup bags" }
-    - { component: turkey-meatballs, times: 2, note: "half sauced for Tue, half frozen for subs" }
+    - { component: lime-shredded-chicken, times: 2, note: "4 portions of 3 cups: 2 for the fridge, 2 for the freezer" }
+    - { component: turkey-meatballs, times: 2, note: "20 for Thursday, 20 frozen for Week B's subs" }
     - { component: honey-garlic-sauce, times: 1 }
-    - { component: cooked-rice, times: 4 }
+    - { component: cooked-rice, times: 4, note: "4 cups dry rice makes 12 cups cooked" }
     - { component: egg-bites, times: 1 }
     - { component: sausage-patties, times: 1 }
     - { component: lime-crema, times: 1 }
   timeline:
     - at: "0:00"
       title: Start the chicken
-      text: Put 6 lb chicken thighs in the Instant Pot with 1 cup broth, juice of 2 limes, 2 tsp cumin, 2 tsp chili powder, 1 tsp smoked paprika, 1 tsp onion powder, 4 minced garlic cloves and 1 1/2 tsp salt. High pressure 12 minutes, natural release 10.
+      text: The Instant Pot has the longest job, so it goes first.
+      makes: [lime-shredded-chicken]
+      steps:
+        - "Put {lime-shredded-chicken/chicken-thighs} in the Instant Pot."
+        - "Add {lime-shredded-chicken/chicken-broth}, the juice of {lime-shredded-chicken/limes}, {lime-shredded-chicken/cumin}, {lime-shredded-chicken/chili-powder}, {lime-shredded-chicken/smoked-paprika}, {lime-shredded-chicken/onion-powder}, {lime-shredded-chicken/garlic} (minced) and {lime-shredded-chicken/salt}. Stir so every piece is coated."
+        - "Lock the lid and turn the valve to Sealing. Press Pressure Cook, set High, 12 minutes. It takes 10 to 15 minutes to come up to pressure before the countdown starts."
+        - "Set a phone timer for 40 minutes so you remember to come back to it (step 6)."
     - at: "0:05"
       title: Start the rice
-      text: Cook 4 cups dry rice on the stove or in the rice cooker. Heat the oven to 400°F.
+      text: "{cooked-rice/rice} makes {cooked-rice}. Use your biggest pot with a tight lid (6 quarts or more)."
+      makes: [cooked-rice]
+      steps:
+        - "Rinse the rice in a fine-mesh strainer under cold water, swishing it with your hand, until the water runs mostly clear (about a minute). Do it in two batches if the strainer is small."
+        - "Put the rice, {cooked-rice/water} and {cooked-rice/salt} in the pot. Bring to a boil over high heat with the lid off (about 8 minutes)."
+        - "As soon as it boils, stir once, put the lid on and turn the heat to low. Set a timer for 18 minutes. Don't lift the lid."
+        - "When the timer goes, turn the heat off and leave the lid on for 10 more minutes. You'll come back to it in step 7."
     - at: "0:10"
       title: Make the meatballs
-      text: Mix 2 lb ground turkey, 2 eggs, 3/4 cup panko, 1/3 cup parmesan, 2 tsp garlic powder, 1 tsp onion powder and 1 tsp salt. Roll about 40 one-inch balls and bake on two lined pans for 18 to 20 minutes.
-    - at: "0:35"
+      text: "{turkey-meatballs} on two pans. Kids can help roll."
+      makes: [turkey-meatballs]
+      steps:
+        - "Heat the oven to 400°F. Line two sheet pans with parchment."
+        - "In a large bowl, put {turkey-meatballs/ground-turkey}, {turkey-meatballs/eggs}, {turkey-meatballs/panko}, {turkey-meatballs/parmesan}, {turkey-meatballs/garlic-powder}, {turkey-meatballs/onion-powder} and {turkey-meatballs/salt}."
+        - "Mix with your hands until just combined. Don't squeeze hard or the meatballs get tough."
+        - "Roll into 1 1/4-inch balls (a golf ball is about right): 20 per pan, almost touching."
+        - "Bake both pans together for 18 to 20 minutes, until a middle one reads 165°F."
+        - "When they come out, turn the oven down to 350°F for the egg bites. Leave the meatballs on the pans to cool."
+    - at: "0:25"
       title: Make the honey-garlic sauce
-      text: Simmer 1/2 cup honey, 1/3 cup soy sauce, 3 garlic cloves, 1 tsp grated ginger and 1 tbsp rice vinegar. Thicken with 1 tbsp cornstarch in 2 tbsp water. Cool and jar.
-    - at: "0:40"
+      makes: [honey-garlic-sauce]
+      steps:
+        - "In a small saucepan over medium heat, put {honey-garlic-sauce/honey}, {honey-garlic-sauce/soy-sauce}, {honey-garlic-sauce/garlic} (minced), {honey-garlic-sauce/ginger} (grated) and {honey-garlic-sauce/rice-vinegar}."
+        - "When it bubbles, turn it down to low and simmer 3 minutes."
+        - "Meanwhile, in a small bowl, stir {honey-garlic-sauce/cornstarch} into {honey-garlic-sauce/water:qty} of cold water until smooth."
+        - "Whisk the cornstarch mix into the pot and simmer 1 minute more, until glossy and thick. Turn off the heat and let it cool, then pour it into a jar."
+    - at: "0:30"
       title: Make the egg bites
-      text: Drop the oven to 350°F. Whisk 12 eggs, 1/2 cup milk, 1 cup cheese and 1/2 tsp salt. Fill a greased muffin tin; add chopped spinach to half. Bake 20 to 22 minutes.
+      kid: true
+      after: A grown-up puts the tin in the oven once the meatballs are out and it's down to 350°F.
+      text: "{egg-bites}: 6 plain and 6 with spinach."
+      makes: [egg-bites]
+      steps:
+        - "Rub {egg-bites/butter:qty} of soft butter all over the inside of every muffin cup. A paper towel makes this easy."
+        - "Chop {egg-bites/baby-spinach} into small pieces and set it aside."
+        - "Crack {egg-bites/eggs} into a large bowl (an 8-cup measuring cup is easiest to pour from). Fish out any bits of shell."
+        - "Add {egg-bites/milk} and {egg-bites/salt}. Whisk until there are no streaks of white, then stir in {egg-bites/mexican-cheese}."
+        - "Fill 6 of the cups about three-quarters full (a heaping 1/3 cup each). Stir the spinach into the eggs left in the bowl, then fill the other 6."
+        - "Bake at 350°F for 20 to 22 minutes, until the middles don't look wet when you gently shake the pan. Use oven mitts."
+        - "Cool in the tin for 10 minutes. Run a butter knife around each one and pop them out onto a plate."
+    - at: "0:40"
+      title: Release and shred the chicken
+      makes: [lime-shredded-chicken]
+      steps:
+        - "When the Instant Pot finishes it beeps and starts counting up (L0:01, L0:02…). Let it sit until it reads L0:10."
+        - "Turn the valve to Venting with a spoon handle, keeping your hand and face away from the steam. Open the lid when the pin drops."
+        - "Check that the thickest piece reads at least 175°F."
+        - "Lift the chicken into a large bowl with tongs. Leave the juices in the pot."
+        - "Shred it with two forks, then stir in about 2 cups of the juices so it stays moist. Let it cool while you do the next steps."
     - at: "0:45"
-      title: Chop and brown
-      text: Cut the broccoli into florets and the melon or pineapple into cubes. Wash the grapes and snap peas. Brown 6 sausage patties and cool them for Thursday.
-    - at: "1:05"
+      title: Cool the rice and brown the sausage
+      makes: [cooked-rice, sausage-patties]
+      steps:
+        - "Rice: fluff it with a fork and spread it on a sheet pan (or two) to cool. It has to be cool before the lids go on."
+        - "Sausage: lay {sausage-patties/sausage-patties} in a large skillet over medium heat, no oil. Cook about 4 minutes per side until browned (5 if they went in frozen)."
+        - "Move the patties to a paper-towel-lined plate to cool."
+    - at: "0:55"
+      title: Cut the broccoli and melon
+      text: A grown-up job. Leave everything on the board for the fruit-and-veggie packer.
+      makes: [broccoli, cantaloupe]
+      steps:
+        - "Broccoli: cut {broccoli} into bite-size florets, about 1 1/2 inches. Rinse, then spread on a towel and pat dry so they don't get slimy."
+        - "Melon: rinse the outside of the cantaloupe, cut it in half and scoop out the seeds. Cut the rind off one half and cut it into 1-inch cubes: {cantaloupe}. Wrap the other half for a snack."
+        - "Got a pineapple instead? Cut off the top and the rind, quarter it, cut out the core, and cut half of it into 1-inch chunks."
+    - at: "1:00"
+      title: Pack the fruit and veggies
+      kid: true
+      text: One container per dinner, labeled with the day. Tap "What's this for?" to see each container.
+      makes: [grapes, snap-peas, baby-carrots, broccoli, cantaloupe]
+      steps:
+        - "Grapes: rinse {grapes}, pull them off the stems and pat dry. Container: {portions:grapes}."
+        - "Snap peas: rinse {snap-peas}, snap off the stem end (pull the string off with it) and pat dry. Containers: {portions:snap-peas}."
+        - "Baby carrots, straight from the bag: {portions:baby-carrots}."
+        - "Broccoli florets: {portions:broccoli}."
+        - "Melon cubes: {portions:cantaloupe}."
+        - "Bananas, apples and clementines stay whole. Nothing to pack."
+    - at: "1:10"
       title: Make the lime crema
-      text: Stir 1 cup Greek yogurt with the juice of 1 lime and a pinch each of salt and garlic powder.
-    - at: "1:20"
-      title: Finish the chicken
-      text: Shred with two forks and stir back into the juices. Put half in two containers for Monday and Wednesday. Vacuum-seal the rest in two flat 3-cup bags and freeze.
-    - at: "1:30"
-      title: Portion and freeze
-      text: Toss half the meatballs with the sauce for Tuesday. Cool, vacuum-seal and freeze the other half. Freeze the extra rice and egg bites too.
+      kid: true
+      makes: [lime-crema]
+      steps:
+        - "Spoon {lime-crema/greek-yogurt} into a jar."
+        - "Squeeze in the juice of {lime-crema/limes}. Add {lime-crema/garlic-powder} and {lime-crema/salt}."
+        - "Stir until smooth, put the lid on, and label it: Tue · crema."
+    - at: "1:15"
+      title: Portion the chicken
+      text: "{lime-shredded-chicken}, split four ways."
+      makes: [lime-shredded-chicken]
+      steps:
+        - "Split it into 4 portions of 3 cups, each with a spoonful of juices: {portions:lime-shredded-chicken}."
+        - "Fridge portions go in 4-cup lidded containers."
+        - "Freezer portions go in vacuum-seal bags. Use the sealer's Moist setting if it has one; otherwise lay the open bags flat in the freezer for an hour first, then seal, so the juices don't get pulled into the sealer."
+        - "Label each one with the day and dinner (the Pack tab shows the label)."
+    - at: "1:25"
+      title: Portion everything else
+      makes: [turkey-meatballs, honey-garlic-sauce, cooked-rice, egg-bites, sausage-patties]
+      steps:
+        - "Meatballs: {portions:turkey-meatballs}. Keep the sauce in its jar until Thursday so the meatballs don't go soggy."
+        - "Rice: {portions:cooked-rice}."
+        - "Egg bites: {portions:egg-bites}."
+        - "Sausage: {portions:sausage-patties}."
+        - "Freezer bags: make sure everything is cool, then vacuum-seal and lay flat in the freezer. Freeze the egg bites on a plate for an hour first so they don't squash."
     - at: "1:40"
-      title: Pack and label
-      text: Label every container with its day. Let everything cool before the lids go on.
+      title: Label and check
+      steps:
+        - "Every container and bag gets a label with the day and the dinner."
+        - "Open the Pack tab and tick off each container as it goes into the fridge or freezer."
+        - "Wipe down, start the dishwasher. Done."
 
 dinners:
-  mon: { recipe: chicken-burrito-bowls }
-  tue: { recipe: honey-garlic-meatballs }
-  wed: { recipe: chicken-quesadillas }
-  thu: { recipe: waffle-breakfast-sandwiches }
-  fri: { recipe: naan-pizzas }
+  mon: { recipe: chicken-quesadillas, night: car }
+  tue: { recipe: chicken-burrito-bowls, night: regular }
+  wed: { recipe: waffle-breakfast-sandwiches, night: car }
+  thu: { recipe: honey-garlic-meatballs, night: regular }
+  fri: { recipe: naan-pizzas, night: regular }
 
 # Weekly items not tied to a recipe.
 extras:
   - { item: milk, qty: 1, unit: gallon }
   - { item: foil, qty: 1, unit: roll }
   - { item: vacuum-bags, qty: 1, unit: roll }
+  - { item: parchment, qty: 1, unit: roll }
 
 notes:
-  - Wednesday and Thursday are car nights. Swap them with any two nights you'll be home after 7.
+  - Rearranged on Monday. The late nights moved to Monday and Wednesday this week.
+  - "Fridge time checks out: Thursday's meatballs and rice are on day 4, the last day they keep, so don't push Thursday to Friday."

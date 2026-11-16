@@ -82,6 +82,34 @@
       },
       "short": {
         "type": "string"
+      },
+      "cups": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "About how many cups one unit makes once prepped (per lb, or per each): grapes 3, a broccoli crown 4."
+      },
+      "prep_ahead": {
+        "type": "object",
+        "required": [
+          "days",
+          "how"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "days": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "How many days it keeps once washed or cut."
+          },
+          "how": {
+            "type": "string"
+          }
+        },
+        "description": "Produce that can be washed or cut on prep day."
+      },
+      "never_buy": {
+        "type": "boolean",
+        "description": "Never on the grocery list (tap water)."
       }
     }
   }

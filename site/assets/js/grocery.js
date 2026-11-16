@@ -44,7 +44,7 @@ function render() {
   const list = buildList(weeks, data.catalog, { includeStaples: staples.checked });
   out.value = toAnyListText(list);
   count.textContent = `${list.lines.length} item${list.lines.length === 1 ? '' : 's'}`;
-  pantry.textContent = list.pantry.length ? `Check the pantry: ${list.pantry.map((p) => p.text).join(', ')}.` : '';
+  pantry.textContent = !staples.checked && list.pantry.length ? `Left off (pantry staples): ${list.pantry.map((p) => p.text).join(', ')}.` : '';
 }
 form.addEventListener('change', render);
 render();

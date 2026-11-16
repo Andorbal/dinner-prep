@@ -4,6 +4,8 @@ yield: { qty: 8, unit: each, one: chicken burrito, other: chicken burritos }
 storage:
   fridge_days: 4
   freezer_months: 3
+  container: foil
+  freeze_in: foil, then a vacuum-seal bag
   freeze: Wrap each in foil, then vacuum-seal individually.
   thaw: No thaw needed. Microwave 2 minutes, then air-fry at 375°F for 4 minutes.
 uses:
@@ -13,6 +15,7 @@ ingredients:
   - { item: black-beans, qty: 1, unit: can, prep: rinsed and drained }
   - { item: mexican-cheese, qty: 2, unit: cup }
   - { item: tortillas, qty: 8 }
+tools: [can-opener, fine-strainer, measuring-cups, foil]
 steps:
   - text: Warm the tortillas in the microwave for 30 seconds so they roll without cracking.
     minutes: 2

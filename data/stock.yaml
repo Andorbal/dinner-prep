@@ -1,0 +1,14 @@
+# Big things we have on hand: freezer meat, a share of a cow, a bulk buy.
+# Not spices or pantry staples. The planner tries to use these up, and the
+# grocery list subtracts them (from the `added` date on).
+#
+#   item   an id from ingredients.yaml (add one if it's new)
+#   qty    how much, in `unit` (lb, each…)
+#   added  when it came home (YYYY-MM-DD)
+#   where  chest freezer, garage shelf…
+#
+# Example:
+#   - { item: ground-beef, qty: 20, unit: lb, added: 2026-12-05, where: chest freezer, note: 1 lb packs from the quarter cow }
+#   - { item: pork-shoulder, qty: 6, unit: lb, added: 2026-12-05, where: chest freezer }
+
+items: []

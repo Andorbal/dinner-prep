@@ -19,6 +19,6 @@ steps:
     only: prepped
   - Heat the oil in a large skillet over high heat. Stir-fry the beef in two batches, 2 to 3 minutes each, then set aside.
   - Add the broccoli and 1/4 cup water, cover and steam 3 minutes. Return the beef and any marinade and toss until glossy.
-  - text: Reheat the rice, covered, in the microwave.
+  - text: Reheat the rice in the microwave, covered with a splash of water, 4 to 5 minutes, stirring halfway.
     only: prepped
   - Serve over rice with clementines.

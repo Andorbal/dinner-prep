@@ -138,6 +138,46 @@
           "$ref": "#/definitions/unit"
         }
       }
+    },
+    "night": {
+      "enum": [
+        "regular",
+        "car",
+        "microwave",
+        "cook"
+      ],
+      "description": "regular = at home; car = eaten in the car (hand-held); microwave = packed ahead, zero prep, just reheat; cook = more time tonight for something a little more involved."
+    },
+    "tool": {
+      "description": "Equipment from equipment.yaml: an id, or { item, qty, per_batch, note }.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/id"
+        },
+        {
+          "type": "object",
+          "required": [
+            "item"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "item": {
+              "$ref": "#/definitions/id"
+            },
+            "qty": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "per_batch": {
+              "type": "boolean",
+              "description": "Need one per batch (e.g. a sheet pan per batch of meatballs)."
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      ]
     }
   }
 }

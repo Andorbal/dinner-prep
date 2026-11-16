@@ -1,0 +1,43 @@
+name: Chicken fried rice
+summary: Fried rice with diced chicken, egg, peas and carrots, made on prep day from the week's rice. Reheats in minutes and freezes well.
+yield: { qty: 8, unit: cup }
+storage:
+  fridge_days: 4
+  freezer_months: 2
+  freeze: Cool completely, then vacuum-seal flat in 4-cup bags.
+  thaw: Overnight in the fridge, or microwave straight from frozen, covered, 5 to 6 minutes, stirring halfway.
+uses:
+  - { component: cooked-rice, qty: 5, unit: cup }
+ingredients:
+  - { item: chicken-thighs, qty: 1, unit: lb, prep: cut into 1/2-inch pieces }
+  - { item: salt, qty: 0.25, unit: tsp }
+  - { item: eggs, qty: 3 }
+  - { item: olive-oil, qty: 2, unit: tbsp }
+  - { item: garlic, qty: 2, unit: clove, prep: minced }
+  - { item: frozen-peas-carrots, qty: 1.5, unit: cup }
+  - { item: soy-sauce, qty: 0.25, unit: cup }
+  - { item: sesame-oil, qty: 2, unit: tsp }
+tools: [large-skillet, cutting-board, chef-knife, small-bowl, whisk, spatula, measuring-cups, measuring-spoons, garlic-press, sheet-pan, thermometer]
+steps:
+  - text: Spread the cooked rice on a sheet pan to cool and dry for at least 20 minutes. (Fried rice made with warm, steamy rice turns mushy.)
+    minutes: 20
+    active: false
+  - text: Heat 1 tbsp of the oil in your largest skillet over medium-high. Add the chicken and salt and cook, stirring now and then, 5 to 6 minutes until no pink is left (165°F). Move it to a plate.
+    minutes: 8
+    active: true
+    gear: [stove]
+  - text: Beat the eggs in a small bowl. Add a little more oil to the pan, pour in the eggs and scramble until just set, about 1 minute. Add them to the chicken.
+    minutes: 3
+    active: true
+    gear: [stove]
+  - text: Add the rest of the oil and the garlic, stir 30 seconds, then add the rice. Spread it flat and leave it 2 minutes to crisp, stir, and repeat once.
+    minutes: 6
+    active: true
+    gear: [stove]
+  - text: Stir in the peas and carrots and cook 2 minutes. Return the chicken and eggs, add the soy sauce and sesame oil, and toss for 1 minute.
+    minutes: 4
+    active: true
+    gear: [stove]
+  - text: Spread it back on the sheet pan to cool before packing.
+    minutes: 15
+    active: false

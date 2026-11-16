@@ -16,8 +16,12 @@ ingredients:
   - { item: sesame-seeds, qty: 1, unit: tbsp, optional: true }
 sides:
   - { kind: fruit, item: pineapple, qty: 0.5, prep: cubed }
+microwave:
+  include: [teriyaki-chicken, cooked-rice, frozen-edamame, broccoli]
+  separate: Pineapple in its own container. Sesame seeds on top if you like.
+  reheat: Lid ajar, microwave 3 minutes, stir, then 30 more seconds if needed.
 steps:
-  - text: Reheat the chicken and rice in the microwave, covered, 2 to 3 minutes each.
+  - text: Reheat the chicken in the microwave, covered, 2 to 3 minutes. Then the rice, covered with a splash of water, 4 to 5 minutes, stirring halfway.
     only: prepped
   - Microwave the edamame with a splash of water for 3 minutes.
   - Toss the broccoli with the oil and air-fry at 400°F for 8 minutes.

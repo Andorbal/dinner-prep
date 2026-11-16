@@ -4,6 +4,7 @@ yield: { qty: 1, unit: cup }
 storage:
   fridge_days: 14
   freezer_months: 3
+  container: jar
   freeze: Freeze in a small jar or bag.
   thaw: Overnight in the fridge.
 ingredients:
@@ -12,16 +13,18 @@ ingredients:
   - { item: garlic, qty: 3, unit: clove, prep: minced }
   - { item: ginger, qty: 1, unit: tsp, prep: grated }
   - { item: rice-vinegar, qty: 1, unit: tbsp }
-  - { item: cornstarch, qty: 1, unit: tbsp, prep: stirred into 2 tbsp water }
+  - { item: cornstarch, qty: 1, unit: tbsp }
+  - { item: water, qty: 2, unit: tbsp, note: for the cornstarch }
+tools: [small-saucepan, whisk, small-bowl, measuring-cups, measuring-spoons, garlic-press, microplane]
 steps:
-  - text: Simmer the honey, soy sauce, garlic, ginger and vinegar in a small pot for 3 minutes.
+  - text: Put the honey, soy sauce, garlic, ginger and vinegar in a small saucepan over medium heat. Once it bubbles, turn it down and simmer 3 minutes.
     minutes: 5
     active: true
     gear: [stove]
-  - text: Stir in the cornstarch slurry and simmer 1 minute more until glossy and thick.
+  - text: In a small bowl, stir the cornstarch into the cold water until smooth. Whisk it into the pot and simmer 1 minute more, until glossy and thick.
     minutes: 2
     active: true
     gear: [stove]
-  - text: Cool, then store in a jar.
+  - text: Take it off the heat, cool, then pour into a jar.
     minutes: 10
     active: false

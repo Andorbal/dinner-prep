@@ -3,28 +3,56 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Weekly plan (data/plans/<week_of>.yaml). week_of is the Monday.",
   "type": "object",
-  "required": ["week_of", "cycle", "prep", "dinners"],
+  "required": [
+    "week_of",
+    "cycle",
+    "prep",
+    "dinners"
+  ],
   "additionalProperties": false,
   "properties": {
-    "id": { "type": "string" },
-    "_file": { "type": "string" },
-    "week_of": { "$ref": "defs.json#/definitions/date" },
-    "cycle": { "enum": ["A", "B"] },
+    "id": {
+      "type": "string"
+    },
+    "_file": {
+      "type": "string"
+    },
+    "week_of": {
+      "$ref": "defs.json#/definitions/date"
+    },
+    "cycle": {
+      "enum": [
+        "A",
+        "B"
+      ]
+    },
     "prep": {
       "type": "object",
-      "required": ["batches"],
+      "required": [
+        "batches"
+      ],
       "additionalProperties": false,
       "properties": {
         "batches": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["component", "times"],
+            "required": [
+              "component",
+              "times"
+            ],
             "additionalProperties": false,
             "properties": {
-              "component": { "$ref": "defs.json#/definitions/id" },
-              "times": { "type": "number", "exclusiveMinimum": 0 },
-              "note": { "type": "string" }
+              "component": {
+                "$ref": "defs.json#/definitions/id"
+              },
+              "times": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "note": {
+                "type": "string"
+              }
             }
           }
         },
@@ -32,41 +60,116 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["at", "text"],
+            "required": [
+              "at",
+              "title"
+            ],
             "additionalProperties": false,
             "properties": {
-              "at": { "type": "string", "description": "'0:00', '1:20' or a label like 'Sat night'" },
-              "title": { "type": "string" },
-              "text": { "type": "string" }
+              "at": {
+                "type": "string",
+                "description": "'0:00', '1:20' or a label like 'Sat night'"
+              },
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string",
+                "description": "One or two sentences of overview. {component} and {component/item} placeholders expand to real quantities."
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Numbered, do-this-then-this instructions. Same placeholders."
+              },
+              "makes": {
+                "type": "array",
+                "items": {
+                  "$ref": "defs.json#/definitions/id"
+                },
+                "description": "Components or produce (ingredient ids) this step works on; drives the 'What's this for?' panel."
+              },
+              "kid": {
+                "type": "boolean",
+                "description": "A kid can do the whole step (with a grown-up nearby for the oven)."
+              },
+              "after": {
+                "type": "string",
+                "description": "Optional note on what must be done first."
+              }
             }
           }
         },
-        "minutes": { "type": "integer", "description": "Estimated prep time, if you want to override the draft estimate." }
+        "minutes": {
+          "type": "integer",
+          "description": "Estimated prep time, if you want to override the draft estimate."
+        }
       }
     },
     "dinners": {
       "type": "object",
-      "propertyNames": { "$ref": "defs.json#/definitions/day" },
+      "propertyNames": {
+        "$ref": "defs.json#/definitions/day"
+      },
       "additionalProperties": {
         "type": "object",
-        "required": ["recipe"],
+        "required": [
+          "recipe"
+        ],
         "additionalProperties": false,
         "properties": {
-          "recipe": { "$ref": "defs.json#/definitions/id" },
-          "sides": { "type": "array", "items": { "$ref": "defs.json#/definitions/side" }, "description": "Replace the recipe's sides this week." },
-          "note": { "type": "string" },
-          "skipped": { "type": "boolean", "description": "We didn't end up having it." },
-          "swapped_for": { "$ref": "defs.json#/definitions/id", "description": "We had this recipe instead." },
+          "recipe": {
+            "$ref": "defs.json#/definitions/id"
+          },
+          "sides": {
+            "type": "array",
+            "items": {
+              "$ref": "defs.json#/definitions/side"
+            },
+            "description": "Replace the recipe's sides this week."
+          },
+          "note": {
+            "type": "string"
+          },
+          "skipped": {
+            "type": "boolean",
+            "description": "We didn't end up having it."
+          },
+          "swapped_for": {
+            "$ref": "defs.json#/definitions/id",
+            "description": "We had this recipe instead."
+          },
           "feedback": {
             "type": "object",
             "description": "How it went. Keys are household members (A, B, C, D) plus an optional note.",
-            "properties": { "note": { "type": "string" } },
-            "additionalProperties": { "type": "string" }
+            "properties": {
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "night": {
+            "$ref": "defs.json#/definitions/night"
           }
         }
       }
     },
-    "extras": { "type": "array", "items": { "$ref": "defs.json#/definitions/line" } },
-    "notes": { "type": "array", "items": { "type": "string" } }
+    "extras": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.json#/definitions/line"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   }
 }

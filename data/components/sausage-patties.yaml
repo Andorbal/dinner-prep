@@ -8,11 +8,12 @@ storage:
   thaw: Reheat straight from frozen in the air fryer, 350°F for 6 minutes.
 ingredients:
   - { item: sausage-patties, qty: 6 }
+tools: [large-skillet, spatula, cooling-rack]
 steps:
-  - text: Brown the patties in a skillet over medium heat, about 4 minutes per side.
+  - text: Lay the patties in a large skillet over medium heat (no oil needed). Cook about 4 minutes per side until browned (5 if they went in frozen).
     minutes: 10
     active: true
     gear: [stove]
-  - text: Cool on a paper towel.
+  - text: Move to a paper-towel-lined plate to cool.
     minutes: 10
     active: false

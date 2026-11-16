@@ -14,6 +14,7 @@ ingredients:
   - { item: garlic, qty: 3, unit: clove, prep: grated }
   - { item: salt, qty: 1, unit: tsp }
   - { item: black-pepper, qty: 0.5, unit: tsp }
+tools: [air-fryer, large-bowl, microplane, citrus-juicer, measuring-spoons, tongs, thermometer, cutting-board, chef-knife]
 steps:
   - text: Toss the chicken with the lemon, oil, oregano, garlic, salt and pepper. Let it sit 15 minutes (or overnight).
     minutes: 20

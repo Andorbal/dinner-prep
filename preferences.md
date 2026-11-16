@@ -32,13 +32,25 @@ enforces them. If you change a rule here, change it there too.
 ## The week
 
 - Five planned dinners, Monday to Friday. Weekends are on their own.
-- **Two weeknights are late nights** (home after 7pm): dinner must be **hand-held and eaten in the car**.
-  Currently Wednesday and Thursday (`late_nights` in `data/household.yaml`).
-  Pack hot food in foil inside an insulated bag; veggies and fruit in a lidded container with a dip.
+- **Every night has a type**, listed ahead of time in `data/schedule.yaml` (fill it in before each Week A,
+  for the next two weeks):
+  - **At home** (`regular`): the usual, 10 to 15 minutes of finishing.
+  - **In the car** (`car`): home after 7pm, so dinner must be **hand-held and eaten in the car**.
+    Pack hot food in foil inside an insulated bag; veggies and fruit in a lidded container with a dip.
+    Usually Wednesday and Thursday (`late_nights` in `data/household.yaml`, the default when a date isn't listed).
+  - **Grab and microwave** (`microwave`): packed on prep day into single containers, a complete meal.
+    Anyone can grab one from the fridge (say, for a late night at work) and reheat it. Zero prep.
+  - **Cook night** (`cook`): a night with more time, for something a little more involved. Still prep what we can.
 - Prep happens on Sunday.
+
+## Variety
+
+- We'd rather not repeat meals too often. Add new recipes to the library every week (two per two-week plan,
+  at least), and favor dinners we haven't had yet. Bring back the ones that got a `love`.
 
 ## The two-week cycle
 
+- **Both weeks are planned together, before Week A**, so the big prep knows what every freezer portion is for.
 - **Week A: big prep (about 2 hours).** Cook the main proteins in double batches; half goes in the freezer.
 - **Week B: light prep (about 45 minutes).** Runs on the frozen stock from Week A, plus quick assembly (burritos and so on).
 - **Shopping:** buy bulk items (shelf-stable or freezable) every two weeks; buy produce, bakery and short-life dairy each week.
@@ -46,7 +58,12 @@ enforces them. If you change a rule here, change it there too.
 ## Kitchen gear
 
 Instant Pot, crock pot, air fryer, vacuum sealer, stove, oven, microwave, stand mixer, blender, stick blender,
-food processor, rice cooker.
+food processor. **No rice cooker**: rice is made on the stove. The full list of pans and tools is in `data/equipment.yaml`.
+
+## On hand
+
+Big things we've stocked up on (a share of a cow, a bulk pork loin) go in `data/stock.yaml`. The planner
+should use them up, and the grocery list takes them off. Spices and pantry staples don't go there.
 
 The vacuum sealer is why the freezer works: seal proteins flat, they keep about 3 months without freezer burn.
 

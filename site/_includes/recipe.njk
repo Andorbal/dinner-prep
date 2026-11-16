@@ -1,5 +1,5 @@
 {% extends "base.njk" %}
-{% from "macros.njk" import car, fb %}
+{% from "macros.njk" import car, fb, nightBadge %}
 {% block head %}
 <link rel="canonical" href="{{ view.url }}">
 <script type="application/ld+json">{{ view.jsonld | json | safe }}</script>
@@ -23,6 +23,8 @@
     <span>{{ r.spice | spiceWord }}</span>
     {% if r.cuisine %}<span>{{ r.cuisine }}</span>{% endif %}
     {% if r.handheld %}{{ car() }}{% endif %}
+    {% if r.microwave %}{{ nightBadge({ type: 'microwave' }) }}{% endif %}
+    {% if r.cookNight %}{{ nightBadge({ type: 'cook' }) }}{% endif %}
   </div>
   <div class="rc-body">
     <section aria-label="Ingredients">
@@ -42,6 +44,14 @@
         <h2>{% if s.component %}<a href="/prep/{{ s.component }}/">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}</h2>
         <ol class="steps">{% for t in s.steps %}<li><span>{{ t }}</span></li>{% endfor %}</ol>
       {% endif %}{% endfor %}
+      {% if r.microwave and view.kind == 'prepped' %}
+      <h2>As a grab-and-microwave meal</h2>
+      <div class="mw">
+        <p style="margin:0 0 6px">On prep day, pack {{ model.household.servings }} single containers, each with a quarter of: {{ r.microwave.includeNames | join(", ") }}.</p>
+        {% if r.microwave.separate %}<p style="margin:0 0 6px"><b>On the side:</b> {{ r.microwave.separate }}</p>{% endif %}
+        <p style="margin:0"><b>Reheat:</b> {{ r.microwave.reheat }}</p>
+      </div>
+      {% endif %}
       {% if r.notes.length %}<h2>Notes</h2><ul class="notes">{% for n in r.notes %}<li>{{ n }}</li>{% endfor %}</ul>{% endif %}
     </section>
   </div>

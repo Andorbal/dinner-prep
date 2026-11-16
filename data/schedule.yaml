@@ -1,0 +1,18 @@
+# What kind of night each upcoming dinner is. Fill this in before a Week A
+# (it covers the next two weeks); the Thursday planner picks dinners to fit.
+#
+#   regular    at home, the usual 10 to 15 minutes of finishing
+#   car        eaten in the car: must be hand-held
+#   microwave  packed ahead in single containers: grab one and reheat, zero prep
+#   cook       a night with extra time: something a little more involved
+#
+# Nights not listed use household.yaml (late_nights are car, the rest regular).
+# Dates are the dinner's own date.
+
+nights:
+  # Week of Nov 16 (rearranged): late nights moved to Monday and Wednesday.
+  2026-11-16: car
+  2026-11-17: regular
+  2026-11-18: car
+  2026-11-19: regular
+  2026-11-20: regular
