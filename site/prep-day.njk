@@ -75,6 +75,7 @@ bodyClass: prep-mode
       <section id="steps" class="pm-sec" data-sec="steps" aria-labelledby="steps-h">
         <div class="pm-sec-head">
           <h2 class="section" id="steps-h">Steps</h2>
+          <button type="button" class="pm-toggle pm-showpanel" aria-controls="whatfor">Show side panel</button>
           <div class="seg pm-filter" role="group" aria-label="Show steps">
             <button type="button" data-filter="all" aria-pressed="true">Everyone</button>
             <button type="button" data-filter="kid" aria-pressed="false">Kid-friendly ({{ p.prep.kidSteps }})</button>
@@ -188,6 +189,7 @@ bodyClass: prep-mode
     <aside class="whatfor" id="whatfor" aria-labelledby="whatfor-h" aria-live="polite">
       <div class="wf-head">
         <h2 id="whatfor-h">What's this for?</h2>
+        <button type="button" class="wf-hide" aria-label="Hide the side panel so the steps use the full width">Hide ⟩</button>
         <button type="button" class="wf-close" aria-label="Close">✕</button>
       </div>
       <div class="wf-body"><p class="muted">Tap <b>What's this for?</b> on a step to see which dinners it feeds, how to split it up, and what goes in the fridge or freezer.</p></div>
