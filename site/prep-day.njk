@@ -167,13 +167,12 @@ bodyClass: prep-mode
         <ol class="pm-steps preview">
           {% for t in nx.timeline %}
           <li class="step">
-            <details>
-              <summary class="step-head"><span class="step-n">{{ t.n }}</span><span class="step-at">{{ t.at }}</span><h3>{{ t.title }}</h3>{% if t.kid %}<span class="kidtag">Kid-friendly</span>{% endif %}</summary>
-              <div class="step-body">
-                {% if t.text %}<p class="step-text">{{ t.text }}</p>{% endif %}
-                {% if t.steps.length %}<ol class="sub">{% for s in t.steps %}<li>{{ s }}</li>{% endfor %}</ol>{% endif %}
-              </div>
-            </details>
+            <div class="step-head"><span class="step-n">{{ t.n }}</span><span class="step-at">{{ t.at }}</span><h3>{{ t.title }}</h3>{% if t.kid %}<span class="kidtag">Kid-friendly</span>{% endif %}</div>
+            <div class="step-body">
+              {% if t.text %}<p class="step-text">{{ t.text }}</p>{% endif %}
+              {% if t.after %}<p class="step-after">{{ t.after }}</p>{% endif %}
+              {% if t.steps.length %}<ol class="sub">{% for s in t.steps %}<li>{{ s }}</li>{% endfor %}</ol>{% endif %}
+            </div>
           </li>
           {% endfor %}
         </ol>
