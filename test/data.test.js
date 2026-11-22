@@ -8,6 +8,7 @@ import { buildList, toAnyListText } from '../lib/grocery-core.js';
 import { runLedger } from '../lib/ledger.js';
 import { generateNext } from '../lib/generate.js';
 import { formatQty, toShopUnit } from '../lib/units.js';
+import { buildModel } from '../lib/model.js';
 
 const data = loadData();
 
@@ -199,4 +200,11 @@ test('measures read like a cook would say them', () => {
   assert.equal(niceMeasure(0.0833, 'cup'), '4 tsp');
   assert.equal(niceMeasure(9, 'tsp'), '3 tbsp');
   assert.equal(niceMeasure(0.75, 'cup'), '3/4 cup');
+});
+
+test('the home page switches to the new week on its prep Sunday', () => {
+  const week = (today) => { const m = buildModel({ today }); return m.plans[m.currentIdx].week_of; };
+  assert.equal(week('2026-11-21'), '2026-11-16'); // Saturday: still last week
+  assert.equal(week('2026-11-22'), '2026-11-23'); // Sunday: prep day for the new week
+  assert.equal(week('2026-11-28'), '2026-11-23'); // the following Saturday
 });
