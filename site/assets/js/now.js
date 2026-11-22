@@ -7,8 +7,8 @@
   // Home page: show the week whose Sunday-to-Saturday span contains today.
   const weeks = [...document.querySelectorAll('section.wk')];
   if (weeks.length) {
-    const sat = (end) => { const x = new Date(`${end}T00:00:00`); x.setDate(x.getDate() + 1); return x.toISOString().slice(0, 10); };
-    let cur = weeks.find((w) => w.dataset.start <= today && today <= sat(w.dataset.end));
+    // data-start is the prep Sunday and data-end is already the Saturday.
+    let cur = weeks.find((w) => w.dataset.start <= today && today <= w.dataset.end);
     if (!cur) cur = weeks.find((w) => w.dataset.start > today) || weeks[weeks.length - 1];
     weeks.forEach((w) => (w.hidden = w !== cur));
   }
